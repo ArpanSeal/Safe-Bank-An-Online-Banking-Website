@@ -4,7 +4,9 @@ This project is aimed at developing an Online Banking for customer. The system i
 
 # Tech Stack used
 Front-end : HTML, CSS, Bootstrap & Javascript
+
 Back-end : PHP
+
 Database : MySQL
 
 # Features
