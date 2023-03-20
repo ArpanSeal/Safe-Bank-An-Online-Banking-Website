@@ -492,24 +492,6 @@ include "config.php";
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script>
-        // let preloader = document.getElementById('preloader');
-
-        // window.addEventListener('load', function(){
-        //     preloader.style.display = 'none';
-        // })
-        
-        
-        
-        // $(document).ready(function(){
-        // window.setTimeout('fadeout();', 1000);
-        
-        // });
-    
-        // function fadeout(){
-        //     $('#preloader').delay(500).fadeOut();
-        // }
-    </script>
 
 </body>
 
