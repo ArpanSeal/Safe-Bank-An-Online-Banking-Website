@@ -320,6 +320,7 @@ if (mysqli_num_rows($result) > 0) {
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../UserData/js/profileInfo.js"></script>
     <!-- <script src="sweetalert2.all.min.js"></script> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         $('#bar').click(function() {

@@ -4,7 +4,6 @@ $(document).ready(function () {
 
 
     // $('.modal').modal('show');
-    var popFlag;
 
     $("#SenderAc").keyup(function () {
         let SenderAc = $(this).val();
@@ -27,7 +26,6 @@ $(document).ready(function () {
                     success: function (response) {
 
                         if (response["Flag"] != "fail") {
-                            popFlag = 1;
 
                             $("#SenderAcError").text("");
                             let Fname = response["Fname"];
@@ -36,12 +34,15 @@ $(document).ready(function () {
                             let Balance = response["Balance"];
                             let Status = response["Status"];
 
+                            $("#infoS").attr("hidden", false);
+                            $('#SenderAc').addClass("border-right-0");
+
                             $('#SenderAc').popover({
 
                                 title: 'Sender Details',
                                 html: true,
                                 container: "body",
-                                placement: 'right',
+                                placement: 'left',
                                 content: `<p><strong>First Name: </strong> ${Fname}</p> 
                                 <p><strong>Last Name: </strong>${Lname}</p> 
                                 <p><strong>Mobile Number: </strong>${MobileNo}</p>
@@ -54,7 +55,6 @@ $(document).ready(function () {
                         }
                         else {
                             $('#SenderAc').popover('hide');
-                            popFlag = 0;
                             $("#SenderAcError").text("Account Number Not Found. Note: Refresh The Page for next account no");
 
                         }
@@ -65,13 +65,12 @@ $(document).ready(function () {
         }
     });
 
+    $("#infoS").click(function () {
+        $('#SenderAc').popover('toggle')
+        $('#ReceiverAc').popover('hide')
+    });
+
     $("#ReceiverAc").on({
-        click: function () {
-            if (popFlag == 1)
-                $('#SenderAc').popover('toggle');
-            else
-                $('#SenderAc').popover('hide');
-        },
 
         keyup: function () {
             let ReceiverAc = $(this).val();
@@ -95,7 +94,6 @@ $(document).ready(function () {
                         success: function (response) {
 
                             if (response["Flag"] != "fail") {
-                                popFlag = 1;
 
                                 $("#ReciverAcError").text("");
                                 let Fname = response["Fname"];
@@ -103,6 +101,9 @@ $(document).ready(function () {
                                 let MobileNo = response["MobileNo"];
                                 let Balance = response["Balance"];
                                 let Status = response["Status"];
+
+                                $("#infoR").attr("hidden", false);
+                                $('#ReceiverAc').addClass("border-right-0");
 
                                 $('#ReceiverAc').popover({
 
@@ -120,7 +121,6 @@ $(document).ready(function () {
                             }
                             else {
                                 $(this).popover('hide');
-                                popFlag = 0;
                                 $("#ReciverAcError").text("Account Number Not Found. Note: Refresh The Page for next account no");
 
                             }
@@ -132,14 +132,18 @@ $(document).ready(function () {
 
     });
 
+    $("#infoR").click(function () {
+        $('#ReceiverAc').popover('toggle')
+        $('#SenderAc').popover('hide')
+    });
+
     $("#Amount").on({
         click: function () {
-            $('#ReceiverAc').popover('toggle')
+            $('#ReceiverAc').popover('hide')
             $('#SenderAc').popover('hide')
         },
 
         keyup: function () {
-            $('#ReceiverAc').popover('hide')
             let Amount = $(this).val();
 
             if (Amount >= 100) {

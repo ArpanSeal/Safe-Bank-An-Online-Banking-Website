@@ -70,12 +70,6 @@ $(document).ready(function () {
 
     $("#delete").click(function (e) {
 
-        // let profilePath = URL.createObjectURL(e.target.files[0]);
-
-        // $("#ModalProfileImg").attr("src", profilePath);
-
-        // console.log(profilePath);
-
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover this Profile Image!",

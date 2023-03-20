@@ -171,6 +171,7 @@ if (mysqli_num_rows($result) > 0) {
     <script src="../UserData/js/secureAccount.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../UserData/js/showHidePass.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
         $('#bar').click(function() {
