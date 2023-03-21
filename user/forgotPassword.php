@@ -90,7 +90,7 @@ include "../config.php";
                             </div>
                             <div class="form-group mb-4">
                                 <label for="AccountNo" class="sr-only">Account Number</label>
-                                <input type="number" name="AccountNo" id="AccountNo" class="form-control" placeholder="AccountNo">
+                                <input type="number" name="AccountNo" id="AccountNo" class="form-control" placeholder="Account Number">
                             </div>
                             <input name="next" id="next" class="btn btn-block login-btn mb-4" type="submit" value="Next >>">
                             <!-- </form> -->
@@ -120,12 +120,12 @@ include "../config.php";
                     </button>
                 </div>
                 <div class="ms-4 me-4 mt-4">
-                    <label for="NewPassword" class="sr-only">New Password</label>
+                    <label for="NewPassword">New Password</label>
                     <input type="text" id="NewPassword" class="form-control" placeholder="New Password">
                 </div>
                 <div class="m-4">
-                    <label for="ConfirmPassword" class="sr-only">Confirm Password</label>
-                    <input type="text" id="ConfirmPassword" class="form-control" placeholder="ConfirmPassword">
+                    <label for="ConfirmPassword">Confirm Password</label>
+                    <input type="text" id="ConfirmPassword" class="form-control" placeholder="Confirm Password">
                 </div>
                 <button id="reset" class="btn btn-success m-4">Reset</button>
             </div>
