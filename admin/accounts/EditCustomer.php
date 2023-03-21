@@ -102,10 +102,6 @@ if (isset($_POST['EditTable_Edit_btn'])) {
                 </a>
 
                 <ul class="navbar-nav align-self-stretch">
-
-                    <!-- <li class="sidebar-header">
-                        Pages
-                    </li> -->
                     <li class="menuHover">
 
                         <a href="../Dashboard.php" class="nav-link text-left" role="button" aria-haspopup="true" aria-expanded="false">
@@ -179,42 +175,6 @@ if (isset($_POST['EditTable_Edit_btn'])) {
                             <i class="flaticon-bar-chart-1"></i> <i class="bx bx-check-circle ico"></i> Verify Account
                         </a>
                     </li>
-
-                    <!-- <li class="menuHover" id="Transaction">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-history ico"></i> Transaction
-                        </a>
-                    </li> -->
-
-
-
-
-
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-
-                    <!-- <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-dollar-circle ico"></i>Insurance Requests
-                        </a>
-                    </li>
-
-                    <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i><i class="bx bxs-coin ico"></i> Loan Requests
-                        </a>
-                    </li> -->
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-                    <!-- <li class="menuHover">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-cog ico"></i> Setting
-                        </a>
-                    </li> -->
                     <li class="menuHover">
                         <a class="nav-link text-left" role="button" href="../../user/logout.php">
                             <i class="flaticon-map"></i><i class="bx bx-log-out ico"></i> Logout
@@ -553,12 +513,6 @@ if (isset($_POST['EditTable_Edit_btn'])) {
                         </div>
                         <div class="col-6 text-right">
                             <ul class="list-inline">
-                                <!-- <li class="footer-item">
-                                    <a class="text-muted light" href="#">Support</a>
-                                </li>
-                                <li class="footer-item">
-                                    <a class="text-muted light" href="#">Help Center</a>
-                                </li> -->
                                 <li class="footer-item">
                                     <a class="text-muted light" href="../../pages/privacypolicy.php">Privacy</a>
                                 </li>

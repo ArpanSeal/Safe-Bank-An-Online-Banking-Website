@@ -183,13 +183,6 @@
       }, 1000);
     });
   }
-  //   setTimeout(function(){
-  //     $('#preloader').fadeOut();
-  //   }, 3000);
-
-  //   $(document).ready(function () {
-  //     window.setTimeout("fadeout();", 1000);
-  //   });
 
   function fadeout() {
     $("#preloader").delay(500).fadeOut();

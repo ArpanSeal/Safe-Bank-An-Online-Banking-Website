@@ -1,6 +1,5 @@
 <?php
 include 'connection.php';
-// include "script.php";
 include "../config.php";
 
 session_start();
@@ -58,7 +57,6 @@ if (isset($_SESSION['username'])) {
                         if ($status == "Active") {
 
                             session_start();
-                            // $_SESSION['username'] = $row['Username'];
                             $_SESSION['username'] = $row['Username'];
                             $login_username = $row['Username'];
                             $query = "SELECT `AccountNo` from `login` where `Username` = '$login_username'";
@@ -66,9 +64,7 @@ if (isset($_SESSION['username'])) {
                             if (mysqli_num_rows($result) > 0) {
                                 $row = mysqli_fetch_assoc($result);
                                 $_SESSION['AccountNo'] = $row['AccountNo'];
-                            }
-                            // $_SESSION['id'] = $row['ID'];
-                            // $_SESSION['accountNo'] = $row['AccountNo'];       
+                            }       
                             header("Location: UserData/Dashboard.php");
                             mysqli_close($conn);
                         } else {
@@ -78,10 +74,6 @@ if (isset($_SESSION['username'])) {
                     } else if ($state == 1) {
 
                         if ($status == "Super") {
-
-
-                            // $_SESSION['username'] = $row['Username'];
-                            // $_SESSION['id'] = $row['ID'];
                             session_start();
                             $_SESSION['accountNo'] = $row['AccountNo'];
                             header("Location: ../admin/Dashboard.php");
@@ -208,8 +200,6 @@ if (isset($_SESSION['username'])) {
     <script>
         $(document).ready(function() {
             $('input[type=\'password\']').showHidePassword();
-
-            // $('#OldPassword').showHidePassword();
         });
     </script>
 </body>

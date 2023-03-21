@@ -1,9 +1,6 @@
-// console.log("Welcome");
-
 $(document).ready(function () {
     $("#SearchBtn").click(function () {
         let AccountNo = $("#SearchTerm").val();
-        // console.log(AccountNo);
         if (AccountNo.length == 12) {
 
             $.ajax({
@@ -47,7 +44,6 @@ $(document).ready(function () {
     $("#CloseBtn").click(function (e) {
         e.preventDefault();
         let AccountNo = $("#CloseAccount").val();
-        // console.log(AccountNo);
         var form = $(this).parents('form');
 
         swal({
@@ -64,7 +60,6 @@ $(document).ready(function () {
                     type: "POST",
                     url: "search2.php",
                     data: { CloseAc: AccountNo },
-                    // dataType: "dataType",
                     success: function (response) {
                         if (response == "Success") {
                             swal("Account Deleted Sucessfully!", {
@@ -76,7 +71,6 @@ $(document).ready(function () {
                                 form.submit();
     
                             }, 1000);
-                            // console.log(response);
                         }
                         else {
                             swal({
@@ -84,7 +78,6 @@ $(document).ready(function () {
                                 text: "Please First Withdraw Money From Account!",
                                 icon: "error",
                                 buttons: true,
-                                // value:true
                             }).then((value) => {
                                 location.reload();
                               });

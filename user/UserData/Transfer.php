@@ -15,130 +15,6 @@ if (mysqli_num_rows($result) > 0) {
     $row = mysqli_fetch_assoc($result);
     $username = $row['Username'];
 }
-// $query = "SELECT * FROM customer_detail JOIN login ON customer_detail.Account_No = login.AccountNo WHERE login.Username = '$username'";
-// $result = mysqli_query($conn, $query);
-
-// if (mysqli_num_rows($result) > 0) {
-
-//     while ($row = mysqli_fetch_assoc($result)) {
-
-
-
-//     }
-//   }
-
-
-// if (isset($_POST['pay'])) {
-//     $sql = "SELECT * from login where username = '$username'";
-//     $query = mysqli_query($conn, $sql);
-//     $sql0 = mysqli_fetch_array($query);
-
-//     // while ($row = mysqli_fetch_assoc($result)){
-
-//     // }
-
-//     $from = $sql0['AccountNo'];
-//     $to = $_POST['to'];
-//     $amount = $_POST['amount'];
-
-//     // echo $from;
-//     // echo $to;
-//     // echo $amount;
-
-//     $sql = "SELECT * from accounts where AccountNo=$from";
-//     $query = mysqli_query($conn, $sql);
-//     $sql1 = mysqli_fetch_array($query); // returns array or output of user from which the amount is to be transferred.
-
-//     $sql = "SELECT * from accounts where AccountNo=$to";
-//     $query = mysqli_query($conn, $sql);
-//     $sql2 = mysqli_fetch_array($query);
-
-//     if (($amount) < 0) {
-//         echo '<script type="text/javascript">';
-//         echo ' alert("Oops! Negative values cannot be transferred")';  // showing an alert box.
-//         echo '</>';
-//     } else if ($amount > $sql1['Balance']) {
-
-//         echo '<script type="text/javascript">';
-//         echo ' alert("Bad Luck! Insufficient Balance")';  // showing an alert box.
-//         echo '</script>';
-//     } else if ($amount == 0) {
-
-//         echo "<script type='text/javascript'>";
-//         echo "alert('Oops! Zero value cannot be transferred')";
-//         echo "</script>";
-//     } else {
-
-//         $newbalance = $sql1['Balance'] - $amount;
-//         $sql = "UPDATE accounts set balance=$newbalance where AccountNo=$from";
-//         mysqli_query($conn, $sql);
-
-//         $newbalance = $sql2['Balance'] + $amount;
-//         $sql = "UPDATE accounts set balance=$newbalance where AccountNo=$to";
-//         mysqli_query($conn, $sql);
-
-
-//         $sql = "SELECT * from customer_detail where Account_No=$from";
-//         $query = mysqli_query($conn, $sql);
-//         $sql1 = mysqli_fetch_array($query);
-
-//         $sql = "SELECT * from customer_detail where Account_No=$to";
-//         $query = mysqli_query($conn, $sql);
-//         $sql2 = mysqli_fetch_array($query);
-
-//         $AccountNo = $sql1['Account_No'];
-//         $Name1 = $sql1['C_First_Name'] . " " . $sql1['C_Last_Name'];
-//         $ProfileColor1 = $sql1['ProfileColor'];
-
-
-
-
-//         $FAccountNo = $sql2['Account_No'];
-//         $Name2 = $sql2['C_First_Name'] . " " . $sql2['C_Last_Name'];
-//         $ProfileColor2 = $sql2['ProfileColor'];
-
-//         $sql = "INSERT INTO transaction(`AccountNo`, `FAccountNo`, `Name`, `Amount`, `Credit`, `Debit`, `ProfileColor`, `Status`) VALUES ('$AccountNo', '$FAccountNo', '$Name1', '$amount', 0, 0, '$ProfileColor1', 'Debited')";
-//         $query = mysqli_query($conn, $sql);
-
-//         $sql = "INSERT INTO transaction(`AccountNo`, `FAccountNo`, `Name`, `Amount`, `Credit`, `Debit`, `ProfileColor`, `Status`) VALUES ('$FAccountNo', '$AccountNo', '$Name2', '$amount', 0, 0, '$ProfileColor2', 'Credited')";
-//         $query = mysqli_query($conn, $sql);
-
-//         $sql = "SELECT * from `transaction` where AccountNo=$from";
-//         $query = mysqli_query($conn, $sql);
-//         $sql3 = mysqli_fetch_array($query);
-
-//         // echo implode(" ",$sql3);
-//         $newcredit = $sql3['Credit'] + $amount;
-//         $sql = "UPDATE `transaction` set Credit=$newcredit where AccountNo=$from";
-//         mysqli_query($conn, $sql);
-
-
-//         $sql = "SELECT * from `transaction` where AccountNo=$to";
-//         $query = mysqli_query($conn, $sql);
-//         $sql4 = mysqli_fetch_array($query);
-
-//         $newdebit = $sql4['Debit'] + $amount;
-//         $sql = "UPDATE `transaction` set debit=$newdebit where AccountNo=$to";
-//         mysqli_query($conn, $sql);
-
-
-//         if ($query) {
-//         echo `
-//             swal({
-//                 title: "Good job!",
-//                 text: "You clicked the button!",
-//                 icon: "success",
-//                 button: "Aww yiss!",
-//                 });
-//             `;
-//         }
-
-//         $newbalance = 0;
-//         $amount = 0;
-//     }
-// }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -313,7 +189,6 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title light mb-4 "></h5>
-                                <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> -->
 
                                 <!-- Customer Account Number -->
                                 <div style="margin-left: 15%; margin-right: 15%; margin-top:10%;">
@@ -348,7 +223,6 @@ if (mysqli_num_rows($result) > 0) {
 
                                     </div>
                                 </div>
-                                <!-- </form> -->
                             </div>
                         </div>
                     </div>

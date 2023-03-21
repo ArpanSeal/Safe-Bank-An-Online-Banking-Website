@@ -20,8 +20,6 @@ $(document).ready(function () {
 
 
     $("#HeaderProfile").popover({
-
-        // title: 'Profile Detail',
         html: true,
         container: "body",
         placement: 'bottom',
@@ -32,8 +30,6 @@ $(document).ready(function () {
     })
 
     $("#HeaderProfileTag").popover({
-
-        // title: 'Profile Detail',
         html: true,
         container: "body",
         placement: 'bottom',

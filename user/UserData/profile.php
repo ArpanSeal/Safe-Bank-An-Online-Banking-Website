@@ -61,8 +61,6 @@ if (mysqli_num_rows($result) > 0) {
             <div class="col-md-12 mt-4">
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Profile</h1>
-                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>
-                        Generate Report</a> -->
                 </div>
 
 
@@ -263,7 +261,6 @@ if (mysqli_num_rows($result) > 0) {
                                 <label id="uploadLabel" for="upload" class="btn btn-primary profileUpload">
                                     <i class="material-icons-outlined" style="font-size: 2rem; margin-top: 5px">&#xe439;</i>
                                 </label>
-                                <!-- <div class="mb-3" style="color:red">Only jpg/jpeg/png file is allowed</div> -->
                             </div>
 
                             <div class="mr-4 ml-4 mb-4">

@@ -8,32 +8,6 @@ include "../admin/connection.php";
 include "../admin/Notification.php";
 include "../admin/adminData.php";
 include "../config.php";
-/* 
-
-set id from 1 in sql
-
-SET @autoid := 0;
-UPDATE login SET ID = @autoid := (@autoid+1);
-ALTER TABLE login AUTO_INCREMENT = 1; 
-
-127.0.0.1/skybank/customer_detail/		http://localhost/phpmyadmin/tbl_sql.php?db=skybank&table=customer_detail
- Showing rows 0 -  4 (5 total, Query took 0.0030 seconds.)
-
-SELECT
-    DATE(Create_Date) AS DATE,
-    COUNT(C_No)
-FROM
-    customer_detail
-GROUP BY
-    DATE(Create_Date)
-
-
-
-*/
-
-
-
-
 
 ?>
 
@@ -69,16 +43,6 @@ GROUP BY
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../admin/css/accounts/OpenAccount.css">
-
-
-    <!-- MDB Frame Work -->
-
-    <!-- Font Awesome -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" /> -->
-    <!-- Google Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" /> -->
-    <!-- MDB -->
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" /> -->
 
     <style>
         .table-bordered>tbody>td>tr,
@@ -229,10 +193,6 @@ GROUP BY
                 </a>
 
                 <ul class="navbar-nav align-self-stretch">
-
-                    <!-- <li class="sidebar-header">
-                        Pages
-                    </li> -->
                     <li class="menuHover">
 
                         <a href="../admin/Dashboard.php" class="nav-link text-left" role="button" aria-haspopup="true" aria-expanded="false">
@@ -305,42 +265,6 @@ GROUP BY
                             <i class="flaticon-bar-chart-1"></i> <i class="bx bx-check-circle ico"></i> Verify Account <span class="badge badge-success" style="font-size: 12px; margin-left: 50px;"> <?php echo $count; ?> new</span>
                         </a>
                     </li>
-
-                    <!-- <li class="menuHover" id="Transaction">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-history ico"></i> Transaction
-                        </a>
-                    </li> -->
-
-
-
-
-
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-                    <!-- 
-                    <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-dollar-circle ico"></i>Insurance Requests
-                        </a>
-                    </li>
-
-                    <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i><i class="bx bxs-coin ico"></i> Loan Requests
-                        </a>
-                    </li>-->
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-                    <!-- <li class="menuHover">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-cog ico"></i> Setting
-                        </a>
-                    </li> -->
                     <li class="menuHover">
                         <a class="nav-link text-left" role="button" href="../user/logout.php">
                             <i class="flaticon-map"></i><i class="bx bx-log-out ico"></i> Logout
@@ -504,12 +428,8 @@ GROUP BY
     </div>
 
 
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -521,10 +441,6 @@ GROUP BY
 
     <script src="../admin/js/transferMoney.js"></script>
 
-    <!-- MDB JS File -->
-    <!-- MDB -->
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script> -->
-
     <script>
         $('#bar').click(function() {
             $(this).toggleClass('open');
@@ -533,8 +449,6 @@ GROUP BY
         });
 
         $("#AdminDropdown").popover({
-
-            // title: 'Profile Detail',
             html: true,
             container: "body",
             placement: 'bottom',

@@ -61,8 +61,6 @@ if (mysqli_num_rows($result) > 0) {
 
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Transaction History</h1>
-                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>
-                        Generate Report</a> -->
                 </div>
 
                 <div class="card">
@@ -74,15 +72,6 @@ if (mysqli_num_rows($result) > 0) {
                                 <h5 class="card-subtitle">Overview of All Time Transaction</h5>
                             </div>
                             <div class="ml-auto">
-                                <!-- <a href="T_history.php" class="btn btn-info" role="button">View More</a> -->
-                                <!-- <div class="dl">
-                                    <select class="custom-select">
-                                        <option value="0" selected="">Monthly</option>
-                                        <option value="1">Daily</option>
-                                        <option value="2">Weekly</option>
-                                        <option value="3">Yearly</option>
-                                    </select>
-                                </div> -->
                             </div>
                         </div>
                         <!-- title -->
@@ -131,19 +120,8 @@ if (mysqli_num_rows($result) > 0) {
                                                     </div>
                                                 </div>
                                             </td>
-
-                                            <!-- <td><?php
-                                                // $to = $row['FAccountNo'];
-                                                // $sql = "SELECT * from customer_detail where Account_No=$to";
-                                                // $query = mysqli_query($conn, $sql);
-                                                // $sql1 = mysqli_fetch_array($query);
-
-                                                // $Name = $sql1['C_First_Name'] . " " . $sql1['C_Last_Name'];
-                                                // echo $Name;
-                                                ?></td> -->
                                             <td><?php echo $row['FAccountNo'] ?></td>
                                             <td><?php
-                                            // echo $row['DateTime']
                                             $dateTime = $row['DateTime'];
                                             $i = 0;
                                             while($dateTime[$i]!=" ")
@@ -217,7 +195,6 @@ if (mysqli_num_rows($result) > 0) {
 
 
         });
-        // console.log("hello");
         $("#TransactionHistory").addClass("active");
     </script>
 

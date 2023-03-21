@@ -81,19 +81,16 @@ include "../config.php";
                             <p class="login-card-description">Validate Your Credential</p>
 
                             <!-- Login Form -->
-                            <!-- <form action="" method="POST"> -->
 
                             <div class="form-group">
                                 <label for="username" class="sr-only">Username</label>
                                 <input type="text" name="Username" id="Username" class="form-control" placeholder="Username">
-                                <!-- <p id="alert1" style="color: red;"></p> -->
                             </div>
                             <div class="form-group mb-4">
                                 <label for="AccountNo" class="sr-only">Account Number</label>
                                 <input type="number" name="AccountNo" id="AccountNo" class="form-control" placeholder="Account Number">
                             </div>
                             <input name="next" id="next" class="btn btn-block login-btn mb-4" type="submit" value="Next >>">
-                            <!-- </form> -->
                             <p class="login-card-footer-text">Go Back To <a href="../index.php" class="text-reset">Home</a></p>
                             <nav class="login-card-footer-nav">
                                 <a href="../pages/terms.php">Terms of use.</a>
@@ -145,13 +142,11 @@ include "../config.php";
                     AccountNo: AccountNo
                 },
                 success: function(response) {
-                    // console.log(response);
                     if (response == "success") {
                         $("#resetPass").modal('show');
                         $("#reset").click(function() {
                             let NewPassword = $("#NewPassword").val();
                             let ConfirmPassword = $("#ConfirmPassword").val();
-                            // console.log(NewPassword + " " + ConfirmPassword);
                             $.ajax({
                                 type: "POST",
                                 url: "code.php",
@@ -161,7 +156,6 @@ include "../config.php";
                                     AccountNo: AccountNo
                                 },
                                 success: function(response) {
-                                    // console.log(response);
                                     if (response == "success") {
                                         swal({
                                             title: "Hurray!",

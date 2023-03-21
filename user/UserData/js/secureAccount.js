@@ -67,7 +67,6 @@ $(document).ready(function () {
         New_Username = $("#NewUsername").val();
         Old_Username = $("#OldUsername").val();
         Password = $("#UserPassword").val();
-        // console.log("Hello");
 
         if (Old_Username == "") {
             $("#OldUserError").text("Username is Empty");
@@ -91,7 +90,6 @@ $(document).ready(function () {
                         url: "code.php",
                         data: { NewUsernameCheck: New_Username },
                         success: function (response) {
-                            // console.log(response);
                             if (response == "pass") {
                                 $("#NewUserError").text("Username Occupied");
                                 $("#NewUserError").css("color", "red");
@@ -116,7 +114,6 @@ $(document).ready(function () {
                                             UserPassword: Password
                                         },
                                         success: function (response) {
-                                            // console.log(response);
                                             if (response == "success") {
                                                 Swal.fire({
                                                     icon: 'success',
@@ -124,8 +121,6 @@ $(document).ready(function () {
                                                     showConfirmButton: false,
                                                     timer: 2000
                                                 })
-
-                                                // window.location.replace("../logout.php");
                                                 setTimeout(function(){
                                                     window.location.replace("./secureAccount.php");
                                                 }, 2000);
@@ -227,8 +222,6 @@ $("#PasswordBtn").click(function (e) {
                                                     showConfirmButton: false,
                                                     timer: 2000
                                                 })
-
-                                                // window.location.replace("../logout.php");
                                                 setTimeout(function(){
                                                     window.location.replace("./secureAccount.php");
                                                 }, 2000);
@@ -271,17 +264,9 @@ $("#PasswordBtn").click(function (e) {
 
 // ----------------------------------------- Switch Click --------------------------------------------------
 
-// $("#SwitchBtn").click(function (e) { 
-
-// console.log($("#SwitchBtn").val());
-// e.preventDefault();
-
-// });
 
 $('#SwitchBtn').change(function () {
     if ($(this).is(':checked')) {
-        // console.log($(this).val() + ' is now checked');
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',
@@ -347,8 +332,6 @@ $('#SwitchBtn').change(function () {
         
 
     } else {
-        // console.log($(this).val() + ' is now unchecked');
-
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
                 confirmButton: 'btn btn-success',

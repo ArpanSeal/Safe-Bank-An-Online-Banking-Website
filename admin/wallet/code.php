@@ -68,9 +68,6 @@ if (isset($_POST['DepositAc'])) {
     $Amount = $_POST['MainAmount'];
 
     if ($Amount >= 100) {
-
-        // mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_ONLY);
-
         $Result = mysqli_query($conn, "SELECT * FROM customer_detail JOIN login ON customer_detail.Account_No = login.AccountNo JOIN accounts ON accounts.AccountNo = login.AccountNo WHERE customer_detail.Account_No = '$AccountNo'") or die(mysqli_error($conn));
         if (mysqli_num_rows($Result) > 0) {
 
@@ -99,9 +96,6 @@ if (isset($_POST['DepositAc'])) {
 
                     $date = date("d/m/Y");
                     $masked =  str_pad(substr($AccountNo, -4), strlen($AccountNo), 'X', STR_PAD_LEFT);
-                    // echo $REmail." ".$RName." ".$Amount." ".$Rtotal." ".$date." ".$masked;
-
-                    // creditMoneyMail($Email, $Name, $Amount, $total, $date, $masked);
                     echo "Success";
                 } catch (\Throwable $th) {
                     mysqli_rollback($conn);
@@ -184,9 +178,6 @@ if (isset($_POST['WDepositAc'])) {
     $Amount = $_POST['WMainAmount'];
 
     if ($Amount >= 100) {
-
-        // mysqli_begin_transaction($conn, MYSQLI_TRANS_START_READ_ONLY);
-
         $Result = mysqli_query($conn, "SELECT * FROM customer_detail JOIN login ON customer_detail.Account_No = login.AccountNo JOIN accounts ON accounts.AccountNo = login.AccountNo WHERE customer_detail.Account_No = '$AccountNo'") or die(mysqli_error($conn));
         if (mysqli_num_rows($Result) > 0) {
 
@@ -215,9 +206,6 @@ if (isset($_POST['WDepositAc'])) {
 
                     $date = date("d/m/Y");
                     $masked =  str_pad(substr($AccountNo, -4), strlen($AccountNo), 'X', STR_PAD_LEFT);
-                    // echo $REmail." ".$RName." ".$Amount." ".$Rtotal." ".$date." ".$masked;
-
-                    // creditMoneyMail($Email, $Name, $Amount, $total, $date, $masked);
                     echo "Success";
                 } catch (\Throwable $th) {
                     mysqli_rollback($conn);

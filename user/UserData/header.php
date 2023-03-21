@@ -11,10 +11,6 @@
             </a>
 
             <ul class="navbar-nav align-self-stretch">
-
-                <!-- <li class="sidebar-header">
-                        Pages
-                    </li> -->
                 <li class="menuHover">
 
                     <a href="Dashboard.php" id="Dashboard" class="nav-link text-left " role="button" aria-haspopup="true" aria-expanded="false">
@@ -53,11 +49,6 @@
                                             <ul class="list-unstyled m-0">
                                                 <li><a id="Profile" class="" href="profile.php">Profile</a></li>
                                                 <li><a id="SecureAccount" href="secureAccount.php">Secure Account</a></li>
-                                                <!-- <li><a href="">Contact Us</a></li> -->
-                                                <!-- <li><a href="">Feedback</a></li> -->
-                                                <!-- <li><a href="">Help</a></li> -->
-                                                <!-- <li><a href="">ReactJS</a></li> -->
-                                                <!-- <li><a href="">Asp.net</a></li> -->
                                             </ul>
                                         </div>
                                     </div>
@@ -68,10 +59,6 @@
                     </div>
                 </li>
 
-
-                <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
 
                 <li class="menuHover box-icon">
                     <a href="../../pages/insurance.php" id="Insurance" class="nav-link text-left" role="button">
@@ -85,14 +72,6 @@
                     </a>
                 </li>
 
-                <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-                <!-- <li id="Setting" class="menuHover">
-                    <a class="nav-link text-left" role="button">
-                        <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-cog ico"></i> Setting
-                    </a>
-                </li> -->
                 <li class="menuHover">
                     <a class="nav-link text-left" role="button" href="../logout.php">
                         <i class="flaticon-map"></i><i class="bx bx-log-out ico"></i> Logout
@@ -131,13 +110,6 @@
                     <form class="d-none d-sm-inline-block form-inline navbar-search">
                         <div class="input-group">
                             <h1 id="bankBrand" style="font-size: 24px; color:blue" class="mt-2"><?php echo BANKNAME ?></h1>
-
-                            <!-- <input type="text" class="form-control bg-light " placeholder="Search for..." aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div> -->
                         </div>
                     </form>
 
@@ -161,55 +133,6 @@
                                 </form>
                             </div>
                         </li>
-
-                        <!-- Nav Item - Alerts -->
-                        <!-- <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown" href="#" id="alertsDropdown" data-toggle="dropdown" aria-expanded="false">
-                                <div class="position-relative">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle" style="color: gray;">
-                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                    </svg>
-                                    <span class="indicator">4</span>
-                                </div>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
-                                <div class="dropdown-menu-header">
-                                    4 New Notifications
-                                </div>
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col-2">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle text-danger">
-                                                    <circle cx="12" cy="12" r="10"></circle>
-                                                    <line x1="12" y1="8" x2="12" y2="12"></line>
-                                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                                                </svg>
-                                            </div>
-                                            <div class="col-10">
-                                                <div class="text-dark">Update completed</div>
-                                                <div class="text-muted small mt-1">Restart server 12 to complete the
-                                                    update.</div>
-                                                <div class="text-muted small mt-1">30m ago</div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                </div>
-                                <div class="dropdown-menu-footer">
-                                    <a href="#" class="text-muted">Show all notifications</a>
-                                </div>
-                            </div>
-                        </li> -->
-                        <!-- Nav Item - Messages -->
-                        <!-- <li class="nav-item">
-                            <a class="nav-link " href="#" role="button">
-                                <i class="fas fa-envelope"></i>
-                                
-                                <span class="badge badge-danger badge-counter">7</span>
-                            </a>
-                        </li> -->
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown">

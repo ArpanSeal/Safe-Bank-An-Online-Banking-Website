@@ -8,29 +8,6 @@ include "../connection.php";
 include "../Notification.php";
 include "../adminData.php";
 include "../../config.php";
-/* 
-
-set id from 1 in sql
-
-SET @autoid := 0;
-UPDATE login SET ID = @autoid := (@autoid+1);
-ALTER TABLE login AUTO_INCREMENT = 1; 
-
-127.0.0.1/skybank/customer_detail/		http://localhost/phpmyadmin/tbl_sql.php?db=skybank&table=customer_detail
- Showing rows 0 -  4 (5 total, Query took 0.0030 seconds.)
-
-SELECT
-    DATE(Create_Date) AS DATE,
-    COUNT(C_No)
-FROM
-    customer_detail
-GROUP BY
-    DATE(Create_Date)
-
-
-
-*/
-
 
 ?>
 
@@ -228,8 +205,6 @@ GROUP BY
                                 <!-- Page Heading -->
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 class="h3 mb-0 light">Customer Accounts</h1>
-                                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm light btn-custo "><i class="bx bx-log-out-circle ico"></i>
-                                        Logout</a> -->
                                 </div>
                             </div>
 
@@ -299,12 +274,6 @@ GROUP BY
                                                                                 <button name="EditTable_Edit_btn" type="submit" class="btn btn-custo"><i class="bx bxs-pencil ico"></i> Edit</button>
                                                                             </form>
                                                                         </td>
-                                                                        <!-- <td class="light">
-                                                                            <form action="EditCustomer.php" method="POST">
-                                                                                <input type="hidden" name="delete_id" value="<?php echo $row['Account_No']; ?>">
-                                                                                <button name="EditTable_delete_btn" type="submit" class="btn btn-danger"><i class="bx bxs-trash ico"></i>Delete</button>
-                                                                            </form>
-                                                                        </td> -->
                                                                     </tr>
 
                                                             <?php
@@ -346,12 +315,6 @@ GROUP BY
                             </div>
                             <div class="col-6 text-right">
                                 <ul class="list-inline">
-                                    <!-- <li class="footer-item">
-                                        <a class="text-muted light" href="#">Support</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a class="text-muted light" href="#">Help Center</a>
-                                    </li> -->
                                     <li class="footer-item">
                                         <a class="text-muted light" href="../../pages/privacypolicy.php">Privacy</a>
                                     </li>

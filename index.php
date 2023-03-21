@@ -75,7 +75,6 @@ include "config.php";
 
                 </div>
                 <div class="col-xl-5 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
-                    <!-- <img src="assets/img/Bank-img1.svg" class="img-fluid animated" alt=""> -->
                     <img src="assets/img/bank-img.svg" class="img-fluid animated" alt="">
                 </div>
             </div>

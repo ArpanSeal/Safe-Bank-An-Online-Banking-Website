@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-    // console.log("hello");
     $("#Dashboard").addClass("active");
 
     let balanceChecker = 1;
@@ -18,19 +16,6 @@ $(document).ready(function () {
 
             $("#DebitLastM").text(response['DebitTotal'] + " ₹");
             $("#CreditLastM").text(response['CreditTotal'] + " ₹");
-
-
-
-
-            // for(let i=0; i<5; i++){
-                
-            // }
-            let Status = new Array($(".Status").text());
-
-
-            // console.log(Status);
-
-
 
         }
     });

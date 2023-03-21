@@ -1,17 +1,10 @@
 $(document).ready(function () {
-    // console.log("Yoo");
-
     $.ajax({
         type: "POST",
         url: "code.php",
         data: { profileDetail: "Profile" },
-        // dataType: "json",
         success: function (response) {
-            // console.log("Yoo");
-            // console.log(response.FName);
             response = JSON.parse(response);
-            // console.log((response));
-
                 if(response.Gender == "Male"){
                     $("#Male").attr("checked", true);
                     $("#GenderPlate").addClass("male-color");
@@ -32,10 +25,6 @@ $(document).ready(function () {
                 $("#MobileNo").text(response.MobileNo);
                 $("#Email").text(response.Email);
                 $("#GenderPlate").text(response.Gender);
-
-                
-                
-                
 
                 // Modal Profile
 
@@ -75,23 +64,17 @@ $(document).ready(function () {
             text: "Once deleted, you will not be able to recover this Profile Image!",
             icon: "warning",
             buttons: true,
-            dangerMode: true,
+            dangerMode: true
         })
         .then((willDelete) => {
             if (willDelete) {
-                // swal("Poof! Your Profile Image has been deleted!", {
-                // icon: "success",
-                // });
                 $("#ModalProfileImg").attr("hidden", true);
                 $("#ProfileIcon").attr("hidden", false);
                 $.ajax({
                     type: "POST",
                     url: "code.php",
                     data: { deleteImgAcc: "deleteImgAcc" },
-                    // dataType: "json",
                     success: function (response) {
-                        
-                        // console.log(response);
                         if (response == "success") {
                             Swal.fire({
                                 icon: 'success',
@@ -128,7 +111,6 @@ $(document).ready(function () {
         // validation error, size limit error
         if($('#upload').val() != '')
         {
-            // console.log(this.files[0]);
             $.ajax({
                 type: "POST",
                 url: "code.php",
@@ -136,7 +118,6 @@ $(document).ready(function () {
                         filename:  this.files[0]['name']
                     },
                 success: function (response) {
-                    // console.log(response);
                     if (response == "success") {
                         Swal.fire({
                             icon: 'success',
@@ -145,7 +126,6 @@ $(document).ready(function () {
                             timer: 2000
                         })
                         let profilePath = URL.createObjectURL(e.target.files[0]);
-                        // console.log(profilePath);
                         $("#ProfileIcon").attr("hidden", true);
                         $("#ModalProfileImg").attr("hidden", false);
                         $("#ModalProfileImg").attr("src", profilePath);

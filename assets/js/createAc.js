@@ -211,7 +211,6 @@ $(document).ready(function () {
 
             $("#EmailError").text("Please Enter Your Email");
             $("#nextBtn").attr('disabled', true);
-            // $(this).attr('required', true);
             EmailError = 1;
         }
         else {
@@ -229,27 +228,6 @@ $(document).ready(function () {
                 EmailError = 0;
                 ENxt=1;
             }
-            // else {
-
-            //     // Fire Ajax query here to check whether the Pan number is aready in database or not
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "AccountValidation.php",
-            //         data: { EmailAddress: email },
-            //         success: function (response) {
-            //             if (response != "0") {
-            //                 $("#EmailError").text("Email Address Already Exist");
-            //                 $("#nextBtn").attr('disabled', true);
-            //                 EmailError = 1;
-            //             }
-            //             else {
-            //                 $("#EmailError").text("");
-            //                 $("#nextBtn").attr('disabled', false);
-            //                 EmailError = 0;
-            //             }
-            //         }
-            //     });
-            // }
         }
 
     });

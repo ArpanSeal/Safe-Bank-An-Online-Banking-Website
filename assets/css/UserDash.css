@@ -30,8 +30,6 @@ sidebar
     left: -50px;
     overflow-y: auto;
     overflow-x: hidden;
-    /* background: #222e3c; */
-    /* background: #1f37ec; */
     background: linear-gradient(90deg, rgb(0 38 136 / 50%) 0%, rgb(131 149 255 / 50%) 100%), url("https://images.unsplash.com/photo-1525838983331-f8bd3c000585?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80") center center no-repeat;
     background-size: cover;
     transition: all 0.5s ease;
@@ -65,7 +63,6 @@ sidebar
 
 .navbar-nav>li>a,
 .submenu-box ul li a {
-    /* color: gray !important;  Default color of munue buttons*/
     color: white !important;
     text-transform: capitalize;
     font-size: 14px;
@@ -86,14 +83,9 @@ sidebar
 
 
 .navbar-nav>li>a.active {
-    /* color: #e9ecef !important;
-    background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .0875) 50%, transparent);
-    border-left: 4px solid #3b7ddd; */
-
     color: #e9ecef !important;
     font-weight: bold;
     background: linear-gradient(90deg, rgba(48, 144, 245, 1) 0%, rgba(255, 255, 255, .0875) 85%, transparent);
-    /* background: linear-gradient(90deg, rgb(183, 19, 248) 0%, rgba(255,255,255,.0875) 85%, transparent); */
     border-left: 4px solid #b9b9b9;
 }
 
@@ -167,15 +159,6 @@ sidebar
 
 
 /*---------------------------------
-sidebar
-----------------------*/
-
-
-
-
-
-
-/*---------------------------------
 main-content
 ----------------------*/
 
@@ -201,12 +184,6 @@ main-content
         width: calc(100% - 270px);
     }
 }
-
-/*---------------------------------
-main-content
-----------------------*/
-
-
 
 /*---------------------------------
 cross-bar animation
@@ -271,13 +248,6 @@ cross-bar animation
     top: 8px;
     transform: rotate(-135deg);
 }
-
-
-/*---------------------------------
-cross-bar animation
-----------------------*/
-
-
 
 /*---------------------------------
 header navbar design
@@ -371,11 +341,6 @@ header navbar design
     color: #fff;
 }
 
-/*---------------------------------
-header navbar design
-----------------------*/
-
-
 
 /*---------------------------------
 main-top card
@@ -429,14 +394,6 @@ main-top card
 .font-16 {
     font-size: 16px;
 }
-
-
-
-/*---------------------------------
-main-top card
-----------------------*/
-
-
 
 
 /*---------------------------------
@@ -510,14 +467,6 @@ main-table
 }
 
 
-
-/*---------------------------------
-main-table
-----------------------*/
-
-
-
-
 /*---------------------------------
 footer
 ----------------------*/
@@ -548,9 +497,6 @@ footer.footer ul {
 /* ---------------------------- HOVER Effect On MENU BUTTONS */
 
 .menuHover a:hover {
-    /* color: #e9ecef !important;
-    background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .0875) 50%, transparent); */
-
     font-weight: bold;
     background: linear-gradient(90deg, rgba(48, 144, 245, 1) 0%, rgba(255, 255, 255, .0875) 85%, transparent);
 
@@ -572,6 +518,5 @@ footer.footer ul {
     color: #e9ecef !important;
     font-weight: bold;
     background: linear-gradient(90deg, rgba(48, 144, 245, 1) 0%, rgba(255, 255, 255, .0875) 85%, transparent);
-    /* background: linear-gradient(90deg, rgb(183, 19, 248) 0%, rgba(255,255,255,.0875) 85%, transparent); */
     border-left: 4px solid #b9b9b9;
 }

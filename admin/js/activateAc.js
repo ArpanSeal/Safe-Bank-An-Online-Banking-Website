@@ -35,15 +35,11 @@ $(document).ready(function () {
                             $("#edit_id").val(response['Ac']);
                             $("#delete_id").val(response['Ac']);
 
-                            // document.cookie = "AccountNumber="+response['Ac'];
-
                         }
 
                     }
                     else {
                         alert("No such Account");
-                        // console.log("fail ajax");
-
                     }
                 }
             });

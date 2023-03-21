@@ -3,107 +3,7 @@ include "../connection.php";
 session_start();
 
 $username = $_SESSION['username'];
-// echo $username;
 $AcNo = $_SESSION['AccountNo'];
-
-
-// echo "run";
-
-// ------------------------------------------------------- DASHBOARD DETAILS-------------------------------------
-
-// if (isset($_POST['BalanceCheck'])) {
-//     // Dashnoard / Query to get Total Balane and saving and AccountNO
-//     $query = "SELECT * FROM customer_detail JOIN login ON customer_detail.Account_No = login.AccountNo JOIN accounts ON accounts.AccountNo = login.AccountNo WHERE login.Username = '$username'";
-//     $result = mysqli_query($conn, $query) or mysqli_error($conn);
-
-//     if (mysqli_num_rows($result) > 0) {
-//         while ($row = mysqli_fetch_assoc($result)) {
-
-//             $Balance = $row['Balance'];
-//             $Saving = $row['SavingBalance'];
-//             $AccountNo = $row['AccountNo'];
-//         }
-
-
-//         // Dashnoard / Query to get last Month Credit data
-//         $CreditQery = "SELECT * FROM transaction WHERE month(Date)=month(now()) AND Status = 'Credited' AND AccountNo = '$AccountNo'";
-
-//         $CreditResult = mysqli_query($conn, $CreditQery) or mysqli_error($conn);
-//         $CreditTotal = '0';
-//         if (mysqli_num_rows($CreditResult) > 0) {
-//             while ($row = mysqli_fetch_assoc($CreditResult)) {
-
-//                 $CreditAmount = $row['Amount'];
-
-//                 $CreditTotal = $CreditTotal + $CreditAmount;
-//             }
-//             $CreditTotal;
-//         }
-
-
-//         // Dashnoard / Query to get last Month Debit data
-//         $DebitQery = "SELECT * FROM transaction WHERE month(Date)=month(now()) AND Status = 'Debited' AND AccountNo = '$AccountNo'";
-
-//         $DebitResult = mysqli_query($conn, $DebitQery) or mysqli_error($conn);
-//         $DebitTotal = '0';
-//         if (mysqli_num_rows($DebitResult) > 0) {
-//             while ($row = mysqli_fetch_assoc($DebitResult)) {
-
-//                 $DebitAmount = $row['Amount'];
-
-//                 $DebitTotal = $DebitTotal + $DebitAmount;
-//             }
-//             $DebitTotal;
-//         }
-
-
-//         // Dashnoard / Query to get this Month Credit data
-//         $CreditThisMonthResult = mysqli_query($conn, "SELECT * FROM transaction WHERE DateTime >= (LAST_DAY(NOW()) + INTERVAL 1 DAY - INTERVAL 1 MONTH) AND DateTime < (LAST_DAY(NOW()) + INTERVAL 1 DAY) AND AccountNo='$AccountNo' AND Status='Credited'") or mysqli_error($conn);
-//         $CreditThisMonthTotal = '0';
-//         if (mysqli_num_rows($CreditThisMonthResult) > 0) {
-//             while ($row = mysqli_fetch_assoc($CreditThisMonthResult)) {
-
-//                 $CreditThisMonthAmount = $row['Amount'];
-
-//                 $CreditThisMonthTotal = $CreditThisMonthTotal + $CreditThisMonthAmount;
-//             }
-//             $CreditThisMonthTotal;
-//         }
-
-//         // Dashnoard / Query to get this Month Debit data
-
-//         $DebitThisMonthResult = mysqli_query($conn, "SELECT * FROM transaction WHERE DateTime >= (LAST_DAY(NOW()) + INTERVAL 1 DAY - INTERVAL 1 MONTH) AND DateTime < (LAST_DAY(NOW()) + INTERVAL 1 DAY) AND AccountNo='$AccountNo' AND Status='Debited'") or mysqli_error($conn);
-//         $DebitThisMonthTotal = '0';
-//         if (mysqli_num_rows($DebitThisMonthResult) > 0) {
-//             while ($row = mysqli_fetch_assoc($DebitThisMonthResult)) {
-
-//                 $DebitThisMonthAmount = $row['Amount'];
-
-//                 $DebitThisMonthTotal = $DebitThisMonthTotal + $DebitThisMonthAmount;
-//             }
-//             $DebitThisMonthTotal;
-//         }
-
-
-
-//         $data = array(
-//             'Balance' => $Balance,
-//             'Saving' => $Saving,
-//             'AccountNo' => $AccountNo,
-//             'CreditTotal' => $CreditTotal,
-//             'DebitTotal' => $DebitTotal,
-//             'CreditThisMonth' => $CreditThisMonthTotal,
-//             'DebitThisMonth' => $DebitThisMonthTotal
-
-//         );
-
-//         echo json_encode($data);
-//     } else {
-//         echo "No Return";
-//     }
-// }
-
-
 
 // ------------------------------------------------------- TRANSFER MONEY -------------------------------------
 
@@ -228,8 +128,6 @@ if (isset($_POST['DepositAc'])) {
                                     $datetime = date("d/m/Y : H/M/S");
                                     $Rmasked =  str_pad(substr($ReceiverAc, -4), strlen($ReceiverAc), 'X', STR_PAD_LEFT);
                                     $Smasked =  str_pad(substr($SenderAc, -4), strlen($SenderAc), 'X', STR_PAD_LEFT);
-                                    // echo $REmail." ".$RName." ".$Amount." ".$Rtotal." ".$date." ".$masked;
-
                                     echo "Success";
                                 } catch (\Throwable $th) {
                                     mysqli_rollback($conn);
@@ -504,11 +402,6 @@ if (isset($_POST['submit'])) {
                     mysqli_close($conn);
                 }
             } 
-        //     else {
-        //         echo $Up_error = 'invalid file extention';
-        //     }
-        // } else {
-        //     echo $Up_error = 'File is too large (Size Limit: 200kb)';
         }
     }
     header("Location: profile.php");
@@ -645,35 +538,3 @@ if (isset($_POST['UpdatePass'])) {
 
     mysqli_close($conn);
 }
-
-// // --------------------------------------------------- DebitCard Application -----------------------------------------
-
-
-// if (isset($_POST['DebitCardApp'])) {
-
-//     $query = "SELECT * FROM customer_detail WHERE Account_No = $AcNo";
-
-//     $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-//     if (mysqli_num_rows($result) > 0) {
-//         while ($row = mysqli_fetch_assoc($result)) {
-//             $FName = $row['C_First_Name'];
-//             $CName = $row['C_Last_Name'];
-//         }
-
-//         $Name = strtoupper($FName . " " . $CName);
-
-//         $sufix = substr($AcNo, 0, 2);
-//         $prefix = substr($AcNo, 2, 2);
-
-//         $DebitCard_No = $prefix . date('ndyHisL') . $sufix;
-
-//         $RandomNO = strval(rand(10000, 99999));
-//         $cvv = substr($RandomNO, 0, 3);
-
-//         $query = "INSERT INTO cards(AccountNo, Name, CardNo, cvv, IssuedDate, ExpiryDate, Status, Verified) VALUES ('$AcNo', '$Name', '$DebitCard_No', $cvv,'', '', 'Inactive', 'No')";
-//         $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-//         echo $result;
-//     } else {
-//         echo "fail";
-//     }
-// }

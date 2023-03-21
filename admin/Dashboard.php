@@ -45,36 +45,7 @@ if (mysqli_num_rows($result) > 0) {
     }
 }
 
-
-// echo json_encode($data);
-// echo json_encode($date); 
 mysqli_close($conn);
-//   echo "There are " . $rows . " rows in my table.";
-
-
-
-/* 
-
-set id from 1 in sql
-
-SET @autoid := 0;
-UPDATE login SET ID = @autoid := (@autoid+1);
-ALTER TABLE login AUTO_INCREMENT = 1; 
-
-127.0.0.1/skybank/customer_detail/		http://localhost/phpmyadmin/tbl_sql.php?db=skybank&table=customer_detail
- Showing rows 0 -  4 (5 total, Query took 0.0030 seconds.)
-
-SELECT
-    DATE(Create_Date) AS DATE,
-    COUNT(C_No)
-FROM
-    customer_detail
-GROUP BY
-    DATE(Create_Date)
-
-
-
-*/
 
 ?>
 
@@ -148,9 +119,6 @@ GROUP BY
 
                 <ul class="navbar-nav align-self-stretch">
 
-                    <!-- <li class="sidebar-header">
-                        Pages
-                    </li> -->
                     <li class="">
 
                         <a class="nav-link text-left active" role="button" aria-haspopup="true" aria-expanded="false">
@@ -474,10 +442,6 @@ GROUP BY
     </div>
     <!-- /#wrapper -->
 
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -495,12 +459,7 @@ GROUP BY
 
         // logout popover on profile 
 
-
-
-
         $("#AdminDropdown").popover({
-
-            // title: 'Profile Detail',
             html: true,
             container: "body",
             placement: 'bottom',
@@ -538,7 +497,6 @@ GROUP BY
             options: {
                 cutout: "70%",
                 radius: "90%",
-                // responsive: false,
                 layout: {
                     padding: {
                         left: -40,
@@ -565,10 +523,6 @@ GROUP BY
                     borderWidth: 1
                 }]
             },
-            options: {
-
-                // responsive:false,
-            }
         });
     </script>
 

@@ -4,8 +4,6 @@ include "../admin/connection.php";
 if (isset($_POST['CAccountNo'])) {
     $AccountNo = $_POST['CAccountNo'];
 
-    // $query = "SELECT * FROM customer_detail INNER JOIN login ON customer_detail.Account_No=login.AccountNo WHERE login.Status = 'Inactive' AND login.AccountNo ='$AccountNo'";
-
     $query = "SELECT * FROM customer_detail WHERE Account_No = '$AccountNo'";
 
     $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -72,12 +70,6 @@ if (isset($_POST['done'])) {
         ALTER TABLE login AUTO_INCREMENT = 1";
     mysqli_multi_query($conn, $resetQuery) or die(mysqli_error($conn));
 }
-
-
-
-// Debit Cards
-
-// Check Debit card Code
 
 // TransferMoney / SenderAccount
 
@@ -237,7 +229,6 @@ if (isset($_POST['TSenderAc'])) {
                                     $datetime = date("d/m/Y : H/M/S");
                                     $Rmasked =  str_pad(substr($ReceiverAc, -4), strlen($ReceiverAc), 'X', STR_PAD_LEFT);
                                     $Smasked =  str_pad(substr($SenderAc, -4), strlen($SenderAc), 'X', STR_PAD_LEFT);
-                                    // echo $REmail." ".$RName." ".$Amount." ".$Rtotal." ".$date." ".$masked;
 
                                     echo "Success";
                                 } catch (\Throwable $th) {

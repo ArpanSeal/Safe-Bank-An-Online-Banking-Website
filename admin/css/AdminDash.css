@@ -37,22 +37,8 @@
     background-image: linear-gradient(45deg, rgb(0 40 184 / 90%) 0%, rgb(0 156 255 / 90%) 100%) !important;
 }
 .border-bg{
-    /* border-color: rgba(98,0,238,1); */
     border: 1px solid rgb(0, 12, 238);
 }
-
-/*.card-shadow:hover{
-     box-shadow: 1px 1px 7px 8px rgba(207,201,201,0.49);
-    -webkit-box-shadow: 1px 1px 7px 8px rgba(207,201,201,0.49);
-    -moz-box-shadow: 1px 1px 7px 8px rgba(207,201,201,0.49); 
-
-    color: #AB47BC !important;
-    background-color: #ce77dd0e;
-    border: 1px solid #AB47BC;
-    border-radius: 4px;
-    transition: box-shadow 0.5s ease;
-
-}*/
 
 body {
     position: relative;
@@ -72,10 +58,6 @@ html {
 }
 
 
-
-
-
-
 /*---------------------------------
 sidebar
 ----------------------*/
@@ -88,8 +70,6 @@ sidebar
     overflow-y: auto;
     overflow-x: hidden;
     background: var(--gray);
-    /* background: #1f37ec; */
-    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(37, 37, 37, 0.5) 100%), url("https://images.pexels.com/photos/544268/pexels-photo-544268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") center center no-repeat; */
     background-size: cover;
     transition: all 0.5s ease;
 }
@@ -122,7 +102,6 @@ sidebar
 
 .navbar-nav>li>a,
 .submenu-box ul li a {
-    /* color: gray !important;  Default color of munue buttons*/  
     color: white !important;
     text-transform: capitalize;
     font-size: 14px;
@@ -143,14 +122,9 @@ sidebar
 
 
 .navbar-nav>li>a.active {
-    /* color: #e9ecef !important;
-    background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .0875) 50%, transparent);
-    border-left: 4px solid #3b7ddd; */
-
     color: #e9ecef !important;
     font-weight: bold;
     background: linear-gradient(90deg, rgb(0, 28, 238) 0%, rgba(0, 67, 238, 0.349) 85%, transparent);
-    /* background: linear-gradient(90deg, rgb(183, 19, 248) 0%, rgba(255,255,255,.0875) 85%, transparent); */
     border-left: 4px solid #b9b9b9;
 }
 
@@ -222,16 +196,6 @@ sidebar
     font-size: 14px;
 }
 
-
-/*---------------------------------
-sidebar
-----------------------*/
-
-
-
-
-
-
 /*---------------------------------
 main-content
 ----------------------*/
@@ -258,11 +222,6 @@ main-content
         width: calc(100% - 270px);
     }
 }
-
-/*---------------------------------
-main-content
-----------------------*/
-
 
 
 /*---------------------------------
@@ -328,12 +287,6 @@ cross-bar animation
     top: 8px;
     transform: rotate(-135deg);
 }
-
-
-/*---------------------------------
-cross-bar animation
-----------------------*/
-
 
 
 /*---------------------------------
@@ -427,11 +380,6 @@ header navbar design
     color: #fff;
 }
 
-/*---------------------------------
-header navbar design
-----------------------*/
-
-
 
 /*---------------------------------
 main-top card
@@ -486,14 +434,6 @@ main-top card
 .font-16 {
     font-size: 16px;
 }
-
-
-
-/*---------------------------------
-main-top card
-----------------------*/
-
-
 
 
 /*---------------------------------
@@ -574,14 +514,6 @@ main-table
 }
 
 
-
-/*---------------------------------
-main-table
-----------------------*/
-
-
-
-
 /*---------------------------------
 footer
 ----------------------*/
@@ -611,9 +543,6 @@ footer.footer ul {
 /* ---------------------------- HOVER Effect On MENU BUTTONS */
 
 .menuHover a:hover{
-    /* color: #e9ecef !important;*/
-    /* background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .0875) 50%, transparent); */
-
     font-weight: bold;
     background: linear-gradient(90deg, rgb(0, 12, 238) 0%, rgba(0, 52, 238, 0.349) 85%, transparent);
     

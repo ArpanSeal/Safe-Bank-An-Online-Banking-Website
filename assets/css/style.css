@@ -219,7 +219,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .getstarted {
   padding: 8px 25px;
-  /* margin-left: 30px; */
   border-radius: 30px;
   color: #fff;
   transition: 0.3s;
@@ -462,7 +461,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 30px;
   transition: 0.5s;
   margin-top: 30px;
-  /* margin-right: 20px; */
   color: #fff;
   border: 2px solid #fff;
 }

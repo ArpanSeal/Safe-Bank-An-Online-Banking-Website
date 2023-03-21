@@ -189,11 +189,6 @@ if (isset($_POST['submit'])) {
     }
 
 
-    // ************************************************** Picode Validation *********************************************
-
-
-
-
 
     // ++++++++++++++++++++++++++++++++++++++++++++++ Basic Detail Ends Here +++++++++++++++++++++++++++++++++++++++++
 
@@ -267,8 +262,6 @@ if (isset($_POST['submit'])) {
         $hex .= $dechex;
     }
 
-    //Print out our random hex color.
-    // echo $hex;
 
     if ($First_Name_error == null && $Last_Name_error == null && $Father_Name_error == null && $Mother_Name_error == null && $Birth_Date_error == null && $Mobile_Number_error == null && $Email_error == null && $UsernameError == false && $PasswordError == false && $ConfirmPassError == false) {
         try {

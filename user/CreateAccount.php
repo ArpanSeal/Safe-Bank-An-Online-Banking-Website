@@ -190,7 +190,7 @@ include "connection.php";
         </div>
         <div style="overflow:auto;">
             <div style="float:right;">
-                <button type="button" id="prevBtn" class="CustomButton" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="prevBtn" class="CustomButton me-3 mb-3" onclick="nextPrev(-1)">Previous</button>
                 <button type="button" id="nextBtn" class="CustomButton" onclick="nextPrev(1)">Next</button>
                 <button type="button" id="submitBtn" class="CustomButton" style="display: none;">Submit</button>
             </div>
@@ -222,7 +222,6 @@ include "connection.php";
                     MobileNo: MobileNo
                 },
                 success: function(response) {
-                    // console.log(response);
                     if (response == "success") {
                         let FName = $("#FName").val();
                         let Lname = $("#Lname").val();
@@ -249,14 +248,12 @@ include "connection.php";
                                 MobileNo: MobileNo
                             },
                             success: function(response) {
-                                // console.log(response);
                                 if (response == "success") {
                                     swal({
                                         title: "Hurray!",
                                         text: "Your account has been created successfully! Please wait for your account activation.",
                                         icon: "success",
-                                        buttons: true,
-                                        // value:true
+                                        buttons: true
                                     }).then((value) => {
                                         window. location = 'login.php';
                                     });
@@ -266,8 +263,7 @@ include "connection.php";
                                         title: "Ooops!",
                                         text: "Some Internal Error Occurred.",
                                         icon: "error",
-                                        buttons: true,
-                                        // value:true
+                                        buttons: true
                                     }).then((value) => {
                                         window. location = 'CreateAccount.php';
                                     });
@@ -280,8 +276,7 @@ include "connection.php";
                             title: "Ooops!",
                             text: response,
                             icon: "error",
-                            buttons: true,
-                            // value:true
+                            buttons: true
                         })
                     }
                 }

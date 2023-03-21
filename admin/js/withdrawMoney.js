@@ -4,8 +4,6 @@ $(document).ready(function () {
         let AccountNo = $(this).val();
 
         if (AccountNo.length == 12) {
-
-            // console.log(AccountNo);
             $.ajax({
                 type: "POST",
                 url: "code.php",
@@ -64,8 +62,7 @@ $(document).ready(function () {
     
     $("#Amount").on({
         click: function () {
-            $('#AccountNo').popover('hide')
-            // $('#AccountNo').popover('toggle')
+            $('#AccountNo').popover('hide');
         },
 
         keyup: function () {
@@ -108,7 +105,6 @@ $(document).ready(function () {
                             success: function (response) {
     
                                 let Status = response;
-                                // console.log(Status)
     
                                 if (Status == "Active") {
                                     $("#AcError").text("");
@@ -128,7 +124,6 @@ $(document).ready(function () {
                                             $('.modal').modal('hide');
                                         },
                                         success: function (response) {
-                                            // console.log(response);
                                             if (response == "Success") {
                                                 swal("Transaction Sucessfully!", {
                                                     icon: "success",
@@ -139,7 +134,6 @@ $(document).ready(function () {
                                                     location.reload();
     
                                                 }, 2000);
-                                                // console.log(response);
                                             }
                                             else {
                                                 swal({
@@ -147,7 +141,6 @@ $(document).ready(function () {
                                                     text: response,
                                                     icon: "error",
                                                     buttons: true,
-                                                    // value:true
                                                 }).then((value) => {
                                                     location.reload();
                                                 });

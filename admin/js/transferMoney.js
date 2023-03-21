@@ -1,9 +1,4 @@
-// console.log("Hello");
-
 $(document).ready(function () {
-
-
-    // $('.modal').modal('show');
 
     $("#SenderAc").keyup(function () {
         let SenderAc = $(this).val();
@@ -17,7 +12,6 @@ $(document).ready(function () {
             }
             else {
                 $("#ReciverAcError").text("");
-                // console.log(SenderAc);
                 $.ajax({
                     type: "POST",
                     url: "code.php",
@@ -83,9 +77,6 @@ $(document).ready(function () {
                     $("#ReciverAcError").text("You Cannot transfer money in same account");
                 }
                 else {
-
-                    // console.log(ReceiverAc);
-
                     $.ajax({
                         type: "POST",
                         url: "code.php",
@@ -165,9 +156,6 @@ $(document).ready(function () {
                             success: function (response) {
 
                                 let Balance = response;
-                                // console.log(Balance)
-                                // console.log(Amount);
-
                                 if (Balance > Amount) {
                                     $("#AmountError").text("");
                                 }
@@ -236,7 +224,6 @@ $(document).ready(function () {
                                     $('.modal').modal('hide');
                                 },
                                 success: function (response) {
-                                    // console.log(response);
                                     if (response == "Success") {
                                         swal("Transaction Sucessfully!", {
                                             icon: "success",
@@ -247,7 +234,6 @@ $(document).ready(function () {
                                             location.reload();
 
                                         }, 2000);
-                                        // console.log(response);
                                     }
                                     else {
                                         swal({
@@ -255,7 +241,6 @@ $(document).ready(function () {
                                             text: response,
                                             icon: "error",
                                             buttons: true,
-                                            // value:true
                                         }).then((value) => {
                                             location.reload();
                                         });

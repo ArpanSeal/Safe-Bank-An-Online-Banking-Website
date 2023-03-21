@@ -8,32 +8,6 @@ include "../admin/connection.php";
 include "../admin/Notification.php";
 include "../admin/adminData.php";
 include "../config.php";
-/* 
-
-set id from 1 in sql
-
-SET @autoid := 0;
-UPDATE login SET ID = @autoid := (@autoid+1);
-ALTER TABLE login AUTO_INCREMENT = 1; 
-
-127.0.0.1/skybank/customer_detail/		http://localhost/phpmyadmin/tbl_sql.php?db=skybank&table=customer_detail
- Showing rows 0 -  4 (5 total, Query took 0.0030 seconds.)
-
-SELECT
-    DATE(Create_Date) AS DATE,
-    COUNT(C_No)
-FROM
-    customer_detail
-GROUP BY
-    DATE(Create_Date)
-
-
-
-*/
-
-
-
-
 
 ?>
 
@@ -208,10 +182,6 @@ GROUP BY
                 </a>
 
                 <ul class="navbar-nav align-self-stretch">
-
-                    <!-- <li class="sidebar-header">
-                        Pages
-                    </li> -->
                     <li class="menuHover">
 
                         <a href="../admin/Dashboard.php" class="nav-link text-left" role="button" aria-haspopup="true" aria-expanded="false">
@@ -284,42 +254,6 @@ GROUP BY
                             <i class="flaticon-bar-chart-1"></i> <i class="bx bx-check-circle ico"></i> Verify Account <span class="badge badge-success" style="font-size: 12px; margin-left: 50px;"> <?php echo $count; ?> new</span>
                         </a>
                     </li>
-
-                    <!-- <li class="menuHover" id="Transaction">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-history ico"></i> Transaction
-                        </a>
-                    </li> -->
-
-
-
-
-
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-
-                    <!-- <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-dollar-circle ico"></i>Insurance Requests
-                        </a>
-                    </li>
-
-                    <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i><i class="bx bxs-coin ico"></i> Loan Requests
-                        </a>
-                    </li> -->
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-                    <!-- <li class="menuHover">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-cog ico"></i> Setting
-                        </a>
-                    </li> -->
                     <li class="menuHover">
                         <a class="nav-link text-left" role="button" href="../user/logout.php">
                             <i class="flaticon-map"></i><i class="bx bx-log-out ico"></i> Logout
@@ -376,8 +310,6 @@ GROUP BY
                                 <!-- Page Heading -->
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 class="h3 mb-0 light">Verify Account</h1>
-                                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm light btn-custo "><i class="bx bx-log-out-circle ico"></i>
-                                        Logout</a> -->
                                 </div>
 
 
@@ -497,12 +429,6 @@ GROUP BY
                             </div>
                             <div class="col-6 text-right">
                                 <ul class="list-inline">
-                                    <!-- <li class="footer-item">
-                                        <a class="text-muted light" href="#">Support</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a class="text-muted light" href="#">Help Center</a>
-                                    </li> -->
                                     <li class="footer-item">
                                         <a class="text-muted light" href="../pages/privacypolicy.php">Privacy</a>
                                     </li>
@@ -563,14 +489,6 @@ GROUP BY
                                 <td class="light" id="Bdate"></td>
                             </tr>
                             <tr>
-                                <th class="light">Adhar No</th>
-                                <td class="light" id="AdharNo"></td>
-                            </tr>
-                            <tr>
-                                <th class="light">Pan No</th>
-                                <td class="light" id="PanNo"></td>
-                            </tr>
-                            <tr>
                                 <th class="light">Mobile No</th>
                                 <td class="light" id="MobileNo"></td>
                             </tr>
@@ -578,41 +496,11 @@ GROUP BY
                                 <th class="light">Email</th>
                                 <td class="light" id="Email"></td>
                             </tr>
-                            <tr>
-                                <th class="light">Pincode</th>
-                                <td class="light" id="Pincode"></td>
-                            </tr>
                         </tbody>
                     </table>
-
-                    <!-- KYC Document -->
-                    <h6 style="margin-bottom: 30px;margin-top: 30px;border-bottom: 1px solid;display: table;">KYC Documents Uploaded: </h6>
-
-
-
-
-                    <!-- Trigger the Modal -->
-                    <img id="AdharImg" class="kycImg" alt="Adhar Card" style="width:100%;max-width:300px">
-                    <img id="PanImg" class="kycImg" alt="Pan Card" style="width:100%;max-width:300px;margin-left: 20%;">
-
-                    <!-- The Modal -->
-                    <div id="myModal" class="customodal">
-
-                        <!-- The Close Button -->
-                        <span class="closebtn">&times;</span>
-
-                        <!-- Modal Content (The Image) -->
-                        <img class="modal-content" id="img01">
-                        <img class="modal-content" id="img02">
-
-                        <!-- Modal Caption (Image Text) -->
-                        <div id="caption"></div>
-                    </div>
-
                 </div>
 
                 <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                     <button type="button" class="btn btn-custo" data-dismiss="modal">Done</button>
                 </div>
             </div>
@@ -640,8 +528,6 @@ GROUP BY
         });
 
         $("#AdminDropdown").popover({
-
-            // title: 'Profile Detail',
             html: true,
             container: "body",
             placement: 'bottom',

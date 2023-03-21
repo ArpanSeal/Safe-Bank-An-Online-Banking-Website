@@ -38,7 +38,6 @@
     background-color: var(--lightGray) !important;
 }
 .border-bg{
-    /* border-color: rgba(98,0,238,1); */
     border: 1px solid rgb(255, 255, 255);
 }
 
@@ -76,9 +75,7 @@ sidebar
     left: -50px;
     overflow-y: auto;
     overflow-x: hidden;
-    /* background: var(--lightGray); */
     background: #181818;
-    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(37, 37, 37, 0.5) 100%), url("https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?cs=srgb&dl=pexels-egil-sj%C3%B8holt-1906658.jpg&fm=jpg") center center no-repeat; */
     background-size: cover;
     transition: all 0.5s ease;
 }
@@ -111,7 +108,6 @@ sidebar
 
 .navbar-nav>li>a,
 .submenu-box ul li a {
-    /* color: gray !important;  Default color of munue buttons*/  
     color: white !important;
     text-transform: capitalize;
     font-size: 14px;
@@ -132,14 +128,9 @@ sidebar
 
 
 .active {
-    /* color: #e9ecef !important;
-    background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .0875) 50%, transparent);
-    border-left: 4px solid #3b7ddd; */
-
     color: #e9ecef !important;
     font-weight: bold;
     background: linear-gradient(90deg, rgb(0, 8, 238) 0%, rgba(0, 135, 238, 0.349) 85%, transparent);
-    /* background: linear-gradient(90deg, rgb(183, 19, 248) 0%, rgba(255,255,255,.0875) 85%, transparent); */
     border-left: 4px solid #b9b9b9;
 }
 
@@ -213,15 +204,6 @@ sidebar
 
 
 /*---------------------------------
-sidebar
-----------------------*/
-
-
-
-
-
-
-/*---------------------------------
 main-content
 ----------------------*/
 
@@ -247,11 +229,6 @@ main-content
         width: calc(100% - 270px);
     }
 }
-
-/*---------------------------------
-main-content
-----------------------*/
-
 
 
 /*---------------------------------
@@ -317,12 +294,6 @@ cross-bar animation
     top: 8px;
     transform: rotate(-135deg);
 }
-
-
-/*---------------------------------
-cross-bar animation
-----------------------*/
-
 
 
 /*---------------------------------
@@ -417,12 +388,6 @@ header navbar design
 }
 
 /*---------------------------------
-header navbar design
-----------------------*/
-
-
-
-/*---------------------------------
 main-top card
 ----------------------*/
 
@@ -475,14 +440,6 @@ main-top card
 .font-16 {
     font-size: 16px;
 }
-
-
-
-/*---------------------------------
-main-top card
-----------------------*/
-
-
 
 
 /*---------------------------------
@@ -563,14 +520,6 @@ main-table
 }
 
 
-
-/*---------------------------------
-main-table
-----------------------*/
-
-
-
-
 /*---------------------------------
 footer
 ----------------------*/
@@ -600,9 +549,6 @@ footer.footer ul {
 /* ---------------------------- HOVER Effect On MENU BUTTONS */
 
 .menuHover a:hover{
-    /* color: #e9ecef !important;*/
-    /* background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .0875) 50%, transparent); */
-
     font-weight: bold;
     background: linear-gradient(90deg, rgb(16, 0, 238) 0%, rgba(0, 59, 238, 0.349) 85%, transparent);
     

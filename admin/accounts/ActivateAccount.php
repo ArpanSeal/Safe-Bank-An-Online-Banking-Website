@@ -152,42 +152,6 @@ if (isset($_POST['verify_btn'])) {
                             <i class="flaticon-bar-chart-1"></i> <i class="bx bx-check-circle ico"></i> Verify Account <span class="badge badge-success" style="font-size: 12px; margin-left: 50px;"> <?php echo $count; ?> new</span>
                         </a>
                     </li>
-
-                    <!-- <li class="menuHover" id="Transaction">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-history ico"></i> Transaction
-                        </a>
-                    </li> -->
-
-
-
-
-
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-
-                    <!-- <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bx-dollar-circle ico"></i>Insurance Requests
-                        </a>
-                    </li>
-
-                    <li class="menuHover box-icon">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i><i class="bx bxs-coin ico"></i> Loan Requests
-                        </a>
-                    </li> -->
-
-                    <!-- <li class="sidebar-header">
-                        tools and component
-                    </li> -->
-                    <!-- <li class="menuHover">
-                        <a class="nav-link text-left" role="button">
-                            <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-cog ico"></i> Setting
-                        </a>
-                    </li> -->
                     <li class="menuHover">
                         <a class="nav-link text-left" role="button" href="../../user/logout.php">
                             <i class="flaticon-map"></i><i class="bx bx-log-out ico"></i> Logout
@@ -202,7 +166,6 @@ if (isset($_POST['verify_btn'])) {
 
         </nav>
         <!-- /#sidebar-wrapper -->
-
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
@@ -244,11 +207,7 @@ if (isset($_POST['verify_btn'])) {
                                 <!-- Page Heading -->
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 class="h3 mb-0 light">Customer Accounts</h1>
-                                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm light btn-custo "><i class="bx bx-log-out-circle ico"></i>
-                                        Logout</a> -->
                                 </div>
-
-
 
                             </div>
 
@@ -404,12 +363,6 @@ if (isset($_POST['verify_btn'])) {
                             </div>
                             <div class="col-6 text-right">
                                 <ul class="list-inline">
-                                    <!-- <li class="footer-item">
-                                        <a class="text-muted light" href="#">Support</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a class="text-muted light" href="#">Help Center</a>
-                                    </li> -->
                                     <li class="footer-item">
                                         <a class="text-muted light" href="../../pages/privacypolicy.php">Privacy</a>
                                     </li>

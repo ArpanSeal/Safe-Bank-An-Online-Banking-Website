@@ -9,30 +9,6 @@ include "../Notification.php";
 include "../adminData.php";
 include "../../config.php";
 
-/* 
-
-set id from 1 in sql
-
-SET @autoid := 0;
-UPDATE login SET ID = @autoid := (@autoid+1);
-ALTER TABLE login AUTO_INCREMENT = 1; 
-
-127.0.0.1/skybank/customer_detail/		http://localhost/phpmyadmin/tbl_sql.php?db=skybank&table=customer_detail
- Showing rows 0 -  4 (5 total, Query took 0.0030 seconds.)
-
-Used to calculate Graph
-SELECT
-    DATE(Create_Date) AS DATE,
-    COUNT(C_No)
-FROM
-    customer_detail
-GROUP BY
-    DATE(Create_Date)
-
-
-
-*/
-
 
 $resetQuery = "SET @autoid := 0;
 UPDATE accounts SET ID = @autoid := (@autoid+1);
@@ -98,9 +74,6 @@ mysqli_multi_query($conn, $resetQuery) or die(mysqli_error($conn));
 
                 <ul class="navbar-nav align-self-stretch">
 
-                    <!-- <li class="sidebar-header">
-                        Pages
-                    </li> -->
                     <li class="menuHover">
 
                         <a href="../Dashboard.php" class="nav-link text-left" role="button" aria-haspopup="true" aria-expanded="false">
@@ -232,8 +205,6 @@ mysqli_multi_query($conn, $resetQuery) or die(mysqli_error($conn));
                                 <!-- Page Heading -->
                                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                                     <h1 class="h3 mb-0 light">Customer Accounts</h1>
-                                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm light btn-custo "><i class="bx bx-log-out-circle ico"></i>
-                                        Logout</a> -->
                                 </div>
 
                             </div>
@@ -340,12 +311,6 @@ mysqli_multi_query($conn, $resetQuery) or die(mysqli_error($conn));
                             </div>
                             <div class="col-6 text-right">
                                 <ul class="list-inline">
-                                    <!-- <li class="footer-item">
-                                        <a class="text-muted light" href="#">Support</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a class="text-muted light" href="#">Help Center</a>
-                                    </li> -->
                                     <li class="footer-item">
                                         <a class="text-muted light" href="../../pages/privacypolicy.php">Privacy</a>
                                     </li>

@@ -9,33 +9,6 @@ include "../Notification.php";
 include "../adminData.php";
 include "../../config.php";
 
-/* 
-
-set id from 1 in sql
-
-SET @autoid := 0;
-UPDATE login SET ID = @autoid := (@autoid+1);
-ALTER TABLE login AUTO_INCREMENT = 1; 
-
-127.0.0.1/skybank/customer_detail/		http://localhost/phpmyadmin/tbl_sql.php?db=skybank&table=customer_detail
- Showing rows 0 -  4 (5 total, Query took 0.0030 seconds.)
-
-SELECT
-    DATE(Create_Date) AS DATE,
-    COUNT(C_No)
-FROM
-    customer_detail
-GROUP BY
-    DATE(Create_Date)
-
-
-
-*/
-
-
-
-
-
 ?>
 
 
@@ -234,10 +207,6 @@ GROUP BY
                 </a>
 
                 <ul class="navbar-nav align-self-stretch">
-
-                    <!-- <li class="sidebar-header">
-                        Pages
-                    </li> -->
                     <li class="menuHover">
 
                         <a href="../Dashboard.php" class="nav-link text-left" role="button" aria-haspopup="true" aria-expanded="false">
@@ -246,7 +215,6 @@ GROUP BY
                     </li>
 
                     <li class="has-sub menuHover">
-                        <!-- this link href="collapseExample1" shows submenue  -->
                         <a class="nav-link collapsed text-left" href="#collapseExample1" role="button" data-toggle="collapse">
                             <i class="flaticon-user"></i> <i class="bx bxs-wallet-alt Profile ico"></i> Wallet
                         </a>
@@ -446,12 +414,6 @@ GROUP BY
                             </div>
                             <div class="col-6 text-right">
                                 <ul class="list-inline">
-                                    <!-- <li class="footer-item">
-                                        <a class="text-muted light" href="#">Support</a>
-                                    </li>
-                                    <li class="footer-item">
-                                        <a class="text-muted light" href="#">Help Center</a>
-                                    </li> -->
                                     <li class="footer-item">
                                         <a class="text-muted light" href="../../pages/privacypolicy.php">Privacy</a>
                                     </li>
@@ -483,7 +445,6 @@ GROUP BY
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -495,10 +456,6 @@ GROUP BY
 
     <script src="../js/withdrawMoney.js"></script>
 
-    <!-- MDB JS File -->
-    <!-- MDB -->
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script> -->
-
     <script>
         $('#bar').click(function() {
             $(this).toggleClass('open');
@@ -507,8 +464,6 @@ GROUP BY
         });
 
         $("#AdminDropdown").popover({
-
-            // title: 'Profile Detail',
             html: true,
             container: "body",
             placement: 'bottom',

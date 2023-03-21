@@ -37,14 +37,8 @@ $(document).ready(function () {
                             $("#edit_id").val(response['Ac']);
                             $("#delete_id").val(response['Ac']);
 
-                            // document.cookie = "AccountNumber="+response['Ac'];
-
                         }
                      
-                    }
-                    else {
-                        // console.log("fail ajax");
-
                     }
                 }
             });

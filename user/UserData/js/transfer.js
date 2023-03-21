@@ -1,6 +1,4 @@
 $(document).ready(function () {
-
-    // console.log("hello");
     $("#Transfer").addClass("active");
 
     $("#AccountNo").bind("contextmenu", function (e) {
@@ -11,9 +9,6 @@ $(document).ready(function () {
         let AccountNo = $(this).val();
 
         if (AccountNo.length == 12) {
-
-            // console.log(AccountNo);
-
             $.ajax({
                 type: "POST",
                 url: "code.php",
@@ -68,7 +63,6 @@ $(document).ready(function () {
     $("#Amount").on({
         click: function () {
             $('#AccountNo').popover('hide')
-            // $('#AccountNo').popover('toggle')
         },
 
         keyup: function () {
@@ -99,7 +93,7 @@ $(document).ready(function () {
                     title: "Are you sure to Transfer of Amount" + "   " + "₹" + Amount,
                     icon: "warning",
                     buttons: true,
-                    dangerMode: true,
+                    dangerMode: true
                 }).then((willDelete) => {
 
                     if (willDelete) {
@@ -111,7 +105,6 @@ $(document).ready(function () {
                             success: function (response) {
 
                                 let Status = response;
-                                // console.log(Status)
 
                                 if (Status == "Active") {
                                     $("#AcError").text("");
@@ -131,7 +124,6 @@ $(document).ready(function () {
                                             $('.modal').modal('hide');
                                         },
                                         success: function (response) {
-                                            // console.log(response);
                                             if (response == "Success") {
                                                 swal("Transaction Sucessfully!", {
                                                     icon: "success",
@@ -142,15 +134,13 @@ $(document).ready(function () {
                                                     location.reload();
 
                                                 }, 2000);
-                                                // console.log(response);
                                             }
                                             else {
                                                 swal({
                                                     title: "Transaction Fail !",
                                                     text: response,
                                                     icon: "error",
-                                                    buttons: true,
-                                                    // value:true
+                                                    buttons: true
                                                 }).then((value) => {
                                                     location.reload();
                                                 });

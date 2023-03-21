@@ -34,15 +34,11 @@ $(document).ready(function () {
 
                             $("#deactivate_id").val(response['Ac']);
 
-                            // document.cookie = "AccountNumber="+response['Ac'];
-
                         }
 
                     }
                     else {
                         alert("No such Account");
-                        // console.log("fail ajax");
-
                     }
                 }
             });

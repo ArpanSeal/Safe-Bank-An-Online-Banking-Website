@@ -9,11 +9,6 @@ if (!isset($_SESSION['username'])) {
 $username = $_SESSION['username'];
 $AccountNo = $_SESSION['AccountNo'];
 
-// echo $username;
-// echo $AccountNo;
-
-// echo print_r($_SESSION);
-
 $query = "SELECT `Username` from `login` where `AccountNo` = '$AccountNo'";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 if (mysqli_num_rows($result) > 0) {
@@ -56,28 +51,6 @@ if (mysqli_num_rows($result) > 0) {
         $debit[] = $row['debit'];
     }
 }
-
-
-
-// Counting daily Transaction 
-
-// $debitChart = "SELECT DATE(Date) AS DATE, SUM(Status = 'Debited') AS status FROM transaction WHERE AccountNo = '$AccountNo' AND Status = 'Debited' OR Status = 'Credited' GROUP BY DATE(Date)";
-
-
-// $result = mysqli_query($conn, $debitChart);
-// $Ddate = array();
-// $Debitdata = array();
-
-// if (mysqli_num_rows($result) > 0) {
-
-//     while ($row = mysqli_fetch_assoc($result)) {
-
-//         $Ddate[] = $row['DATE'];
-//         $Debitdata[] = (int)$row['status'];
-//     }
-// }
-
-
 
 
 $TotalCreditResult = mysqli_query($conn, "SELECT * FROM transaction WHERE AccountNo = '$AccountNo'") or mysqli_error($conn);
@@ -163,8 +136,6 @@ if (mysqli_num_rows($TotalDebitResult) > 0) {
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>
-                        Generate Report</a> -->
                 </div>
             </div>
 
@@ -273,14 +244,6 @@ if (mysqli_num_rows($TotalDebitResult) > 0) {
                             </div>
                             <div class="ml-auto">
                                 <a href="T_history.php" class="btn btn-info" role="button">View More</a>
-                                <!-- <div class="dl">
-                                    <select class="custom-select">
-                                        <option value="0" selected="">Monthly</option>
-                                        <option value="1">Daily</option>
-                                        <option value="2">Weekly</option>
-                                        <option value="3">Yearly</option>
-                                    </select>
-                                </div> -->
                             </div>
                         </div>
                         <!-- title -->
@@ -328,18 +291,8 @@ if (mysqli_num_rows($TotalDebitResult) > 0) {
                                                 </div>
                                             </td>
 
-                                            <!-- <td><?php
-                                                // $to = $row['FAccountNo'];
-                                                // $sql = "SELECT * from customer_detail where Account_No=$to";
-                                                // $query = mysqli_query($conn, $sql);
-                                                // $sql1 = mysqli_fetch_array($query);
-
-                                                // $Name = $sql1['C_First_Name'] . " " . $sql1['C_Last_Name'];
-                                                // echo $Name;
-                                                ?></td> -->
                                             <td><?php echo $row['FAccountNo'] ?></td>
                                             <td><?php
-                                            // echo $row['DateTime']
                                             $dateTime = $row['DateTime'];
                                             $i = 0;
                                             while($dateTime[$i]!=" ")
@@ -418,84 +371,6 @@ if (mysqli_num_rows($TotalDebitResult) > 0) {
 
         });
     </script>
-
-    <script>
-        // var ctx = document.getElementById('Credit').getContext('2d');
-        // var myChart = new Chart(ctx, {
-        //     type: 'line',
-        //     data: {
-        //         labels: <?php echo json_encode($datetime); ?>,
-        //         datasets: [{
-        //                 label: '# Credited',
-        //                 data: <?php echo json_encode($credit); ?>,
-
-        //                 // We Have to compare array two array i.e Debit data and data for expected result
-        //                 backgroundColor: [
-        //                     'rgba(0, 179, 3, 0.2)',
-
-        //                 ],
-        //                 borderColor: 'rgb(0, 179, 3)',
-        //                 borderWidth: 2
-        //             },
-        //             {
-        //                 label: '# Debited',
-        //                 data: <?php echo json_encode($debit); ?>,
-        //                 backgroundColor: [
-        //                     'rgba(245, 7, 31, 0.2)',
-
-        //                 ],
-        //                 borderColor: 'rgb(245, 7, 31)',
-        //                 borderWidth: 2
-        //             }
-        //         ]
-        //     },
-
-        //     options: {
-
-        //         // responsive: false,
-
-        //     }
-        // });
-
-
-        // var ctx = document.getElementById('Balance').getContext('2d');
-        // var myChart = new Chart(ctx, {
-        //     type: 'bar',
-        //     data: {
-        //         labels: ['Credit', 'Debit'],
-        //         datasets: [{
-        //                 label: 'Cash Flow Chart',
-        //                 data: [<?php echo $CreditTotal ?>, <?php echo abs($DebitTotal) ?>],
-        //                 backgroundColor: [
-        //                     'rgba(0, 179, 3, 0.6)',
-        //                     'rgba(245, 7, 31, 0.6)',
-
-        //                 ],
-        //                 borderColor: [
-        //                     'rgba(0, 179, 3)',
-        //                     'rgba(245, 7, 31)',
-        //                 ],
-
-        //                 borderWidth: 2,
-        //                 barThickness: 70
-        //             }
-
-        //         ]
-        //     },
-
-        //     options: {
-
-        //         // responsive: false,
-        //     }
-        // });
-
-
-        // Send Bar Chart
-    </script>
-
-
-
-
 
 </body>
 

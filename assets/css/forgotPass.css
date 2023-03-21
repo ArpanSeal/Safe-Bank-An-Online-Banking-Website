@@ -1,7 +1,5 @@
 body {
     font-family: "Karla", sans-serif;
-    /* background: linear-gradient(to right, #2c8eff, #0024d7); */
-    /* background: linear-gradient(45deg, rgba(86, 58, 250, 0.4) 0%, rgba(116, 15, 214, 0.4) 100%), url("../img/back-img.jpg") center center no-repeat; */
     background: url("../img/back-img.jpg");
     background-size: cover;
     min-height: 100vh;

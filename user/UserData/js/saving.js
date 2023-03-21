@@ -1,7 +1,4 @@
-// console.log('hello');
 $(document).ready(function () {
-
-
     $.ajax({
         type: "POST",
         url: "code.php",
@@ -30,8 +27,6 @@ $(document).ready(function () {
 
                 perShow = Total;
 
-                // console.log(Total);
-
                 if (Total == 100) {
                     Total = 1;
                 }
@@ -41,8 +36,6 @@ $(document).ready(function () {
                 else {
                     Total = "0." + parseInt(Total);
                 }
-
-                // console.log(Total);
             }
 
 
@@ -83,8 +76,6 @@ $(document).ready(function () {
             confirmButtonText: 'Done',
             showLoaderOnConfirm: true,
             preConfirm: (value) => {
-                // console.log(value);
-
                 SavingAmount = value;
 
                 if (/^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$/.test(SavingAmount)) {
@@ -94,7 +85,6 @@ $(document).ready(function () {
                         url: "code.php",
                         data: { Amount: SavingAmount },
                         success: function (response) {
-                            // console.log(response);
                             if (response == "Success") {
                                 Swal.fire({
                                     icon: 'success',
@@ -106,7 +96,6 @@ $(document).ready(function () {
                                     location.reload();
 
                                 }, 2000);
-                                // console.log(response);
                             }
                             else {
 
@@ -115,7 +104,7 @@ $(document).ready(function () {
                                     title: 'Transaction Fail!',
                                     text: response,
                                     showCancelButton: true,
-                                    confirmButtonText: `Ok`,
+                                    confirmButtonText: `Ok`
 
                                 }).then((result) => {
                                     /* Read more about isConfirmed, isDenied below */
@@ -135,8 +124,7 @@ $(document).ready(function () {
                         text: "Please Enter Amount In Only Numbers",
                         icon: "error",
                         showCancelButton: true,
-                        confirmButtonText: `Ok`,
-                        // value:true
+                        confirmButtonText: `Ok`
                     }).then((result) => {
                         if (result.isConfirmed) {
                             location.reload();
@@ -168,9 +156,6 @@ $(document).ready(function () {
             confirmButtonText: 'Done',
             showLoaderOnConfirm: true,
             preConfirm: (value) => {
-
-                // console.log(value);
-
                 TargetAmount = value;
 
                 if (/^[+]?([0-9]+(?:[\.][0-9]*)?|\.[0-9]+)$/.test(TargetAmount)) {
@@ -180,7 +165,6 @@ $(document).ready(function () {
                         url: "code.php",
                         data: { SavingTarget: TargetAmount },
                         success: function (response) {
-                            // console.log(response);
                             if (response == "Success") {
                                 Swal.fire({
                                     icon: 'success',
@@ -192,7 +176,6 @@ $(document).ready(function () {
                                     location.reload();
 
                                 }, 2000);
-                                // console.log(response);
                             }
                             else {
 
@@ -201,7 +184,7 @@ $(document).ready(function () {
                                     title: 'Target hasn\'t been set yet!',
                                     text: response,
                                     showCancelButton: true,
-                                    confirmButtonText: `Ok`,
+                                    confirmButtonText: `Ok`
 
                                 }).then((result) => {
                                     /* Read more about isConfirmed, isDenied below */
@@ -223,7 +206,6 @@ $(document).ready(function () {
                         icon: "error",
                         showCancelButton: true,
                         confirmButtonText: `Ok`
-                        // value:true
                     }).then((result) => {
                         if (result.isConfirmed) {
                             location.reload();
@@ -252,7 +234,6 @@ $(document).ready(function () {
             confirmButtonText: 'Done',
             showLoaderOnConfirm: true,
             preConfirm: (value) => {
-                // console.log(value);
 
                 TransferAmount = value;
 
@@ -263,7 +244,6 @@ $(document).ready(function () {
                         url: "code.php",
                         data: { TransferBalance: TransferAmount },
                         success: function (response) {
-                            // console.log(response);
                             if (response == "Success") {
                                 Swal.fire({
                                     icon: 'success',
@@ -275,7 +255,6 @@ $(document).ready(function () {
                                     location.reload();
 
                                 }, 2000);
-                                // console.log(response);
                             }
                             else {
 
@@ -284,7 +263,7 @@ $(document).ready(function () {
                                     title: 'Transaction Fail!',
                                     text: response,
                                     showCancelButton: true,
-                                    confirmButtonText: `Ok`,
+                                    confirmButtonText: `Ok`
 
                                 }).then((result) => {
                                     /* Read more about isConfirmed, isDenied below */
@@ -305,7 +284,6 @@ $(document).ready(function () {
                         icon: "error",
                         showCancelButton: true,
                         confirmButtonText: `Ok`,
-                        // value:true
                     }).then((result) => {
                         if (result.isConfirmed) {
                             location.reload();
