@@ -156,32 +156,32 @@ include "connection.php";
                         <label for="floatingInputGrid">Create Username</label>
 
                         <span style="color: red;" id="UsernameError"><?php if (isset($_POST['submit'])) {
-                                                                                                echo $UsernameError;
-                                                                                            } ?></span>
+                                                                            echo $UsernameError;
+                                                                        } ?></span>
                     </div>
                 </div>
             </div>
             <div class="col-md mb-3">
                 <div class="col-md">
                     <div class="form-floating">
-                        <input class="form-control" type="password" id="Password" placeholder="Enter Password" data-toggle="tooltip" data-placement="top" title="Enter Password with atleast 8 charater long with 1 Capital 1 small 1 number and 1 special charater" required>
+                        <input class="form-control" type="password" id="Password" placeholder="Enter Password" data-toggle="tooltip" data-placement="top" title="Enter Password with atleast 8 charater long with 1 Capital 1 small 1 number and 1 special charater">
                         <label for="floatingInputGrid">Enter Password</label>
 
                         <span style="color: red;" id="PasswordError"><?php if (isset($_POST['submit'])) {
-                                                                                                echo $PasswordError;
-                                                                                            } ?></span>
+                                                                            echo $PasswordError;
+                                                                        } ?></span>
                     </div>
                 </div>
             </div>
             <div class="col-md mb-3">
                 <div class="col-md">
                     <div class="form-floating">
-                        <input class="form-control" type="password" id="ConfirmPass" placeholder="Confirm Password" required>
+                        <input class="form-control" type="password" id="ConfirmPass" placeholder="Confirm Password">
                         <label for="floatingInputGrid">Confirm Password</label>
 
                         <span style="color: red;" id="ConfirmPassError"><?php if (isset($_POST['submit'])) {
-                                                                                                    echo $ConfirmPassError;
-                                                                                                } ?></span>
+                                                                            echo $ConfirmPassError;
+                                                                        } ?></span>
                     </div>
                 </div>
             </div>
@@ -209,80 +209,89 @@ include "connection.php";
 
     <script>
         $("#submitBtn").click(function() {
+            let FName = $("#FName").val();
+            let Lname = $("#Lname").val();
+            let FAname = $("#FAname").val();
+            let MAname = $("#MAname").val();
+            let BirthDate = $("#BirthDate").val();
+            let Password = $("#Password").val();
+            let ConfirmPass = $("#ConfirmPass").val();
             let Username = $("#Username").val();
             let email = $("#email").val();
             let MobileNo = $("#MobileNo").val();
-            $.ajax({
-                type: "POST",
-                url: "code.php",
-                data: {
-                    check: "check",
-                    Username: Username,
-                    email: email,
-                    MobileNo: MobileNo
-                },
-                success: function(response) {
-                    if (response == "success") {
-                        let FName = $("#FName").val();
-                        let Lname = $("#Lname").val();
-                        let FAname = $("#FAname").val();
-                        let MAname = $("#MAname").val();
-                        let BirthDate = $("#BirthDate").val();
-                        let Password = $("#Password").val();
-                        let ConfirmPass = $("#ConfirmPass").val();
-                        
-                        $.ajax({
-                            type: "POST",
-                            url: "code.php",
-                            data: {
-                                submit: "submit",
-                                FName: FName,
-                                Lname: Lname,
-                                FAname: FAname,
-                                MAname: MAname,
-                                BirthDate: BirthDate,
-                                Password: Password,
-                                ConfirmPass: ConfirmPass,
-                                Username: Username,
-                                email: email,
-                                MobileNo: MobileNo
-                            },
-                            success: function(response) {
-                                if (response == "success") {
-                                    swal({
-                                        title: "Hurray!",
-                                        text: "Your account has been created successfully! Please wait for your account activation.",
-                                        icon: "success",
-                                        buttons: true
-                                    }).then((value) => {
-                                        window. location = 'login.php';
-                                    });
-                                }
-                                else{
-                                    swal({
-                                        title: "Ooops!",
-                                        text: "Some Internal Error Occurred.",
-                                        icon: "error",
-                                        buttons: true
-                                    }).then((value) => {
-                                        window. location = 'CreateAccount.php';
-                                    });
-                                }
-                            }
-                        });
-                    }
-                    else{
-                        swal({
-                            title: "Ooops!",
-                            text: response,
-                            icon: "error",
-                            buttons: true
-                        })
-                    }
-                }
-            });
+
+            if (Username == "") {
+                document.getElementById("UsernameError").innerHTML = "*Please fill the username.";
+            } else if (Password == "") {
+                document.getElementById("PasswordError").innerHTML = "*Please fill the password.";
+            } else if (ConfirmPass == "") {
+                document.getElementById("ConfirmPassError").innerHTML = "*Please confirm the password.";
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "code.php",
+                    data: {
+                        check: "check",
+                        Username: Username,
+                        email: email,
+                        MobileNo: MobileNo,
+                    },
+                    success: function(response) {
+                        console.log("Inside Check");
+                        if (response == "success") {
+                            $.ajax({
+                                type: "POST",
+                                url: "code.php",
+                                data: {
+                                    submit: "submit",
+                                    FName: FName,
+                                    Lname: Lname,
+                                    FAname: FAname,
+                                    MAname: MAname,
+                                    BirthDate: BirthDate,
+                                    Password: Password,
+                                    ConfirmPass: ConfirmPass,
+                                    Username: Username,
+                                    email: email,
+                                    MobileNo: MobileNo,
+                                },
+                                success: function(response) {
+                                    console.log("Inside submit");
+                                    if (response == "success") {
+                                        swal({
+                                            title: "Hurray!",
+                                            text: "Your account has been created successfully! Please wait for your account activation.",
+                                            icon: "success",
+                                            buttons: true,
+                                        }).then((value) => {
+                                            window.location = 'login.php';
+                                        });
+                                    } else {
+                                        swal({
+                                            title: "Ooops!",
+                                            text: "Some Internal Error Occurred.",
+                                            icon: "error",
+                                            buttons: true
+                                        }).then((value) => {
+                                            window.location = 'CreateAccount.php';
+                                        });
+                                    }
+                                },
+                            });
+                        } else {
+                            swal({
+                                title: "Ooops!",
+                                text: response,
+                                icon: "error",
+                                buttons: true,
+                            });
+                        }
+                    },
+                });
+            }
         });
     </script>
+
 
     <!-- Vendor JS Files -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
