@@ -1,45 +1,45 @@
 $(document).ready(function () {
-    $("#Password").change(function () {
+    $("#NewPasswordR").change(function () {
         let Password = $(this).val();
 
         if (!Password == "") {
 
             let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/m;
             if (!regex.test(Password)) {
-                $("#PasswordError").text("Password must be 8 charaters long with 1 uppercase 1 lowercase and 1 letter and 1 special charater");
-                $("#done").attr('disabled', true);
+                $("#PasswordErrorR").text("*Password must be 8 charaters long with 1 uppercase 1 lowercase and 1 letter and 1 special charater");
+                $("#reset").attr('disabled', true);
             }
             else {
-                $("#PasswordError").text("");
-                $("#done").attr('disabled', false);
+                $("#PasswordErrorR").text("");
+                $("#reset").attr('disabled', false);
             }
         }
         else {
-            $("#PasswordError").text("Password Can not Empty");
-            $("#done").attr('disabled', true);
+            $("#PasswordErrorR").text("*Password Can not be Empty");
+            $("#reset").attr('disabled', true);
         }
 
     });
 
-    $("#ConfirmPass").change(function () {
+    $("#ConfirmPasswordR").change(function () {
         let ConfirmPassword = $(this).val();
-        let Password = $("#Password").val();
+        let Password = $("#NewPasswordR").val();
 
         if (!ConfirmPassword == "") {
 
             if (Password == ConfirmPassword) {
-                $("#PasswordError").text("");
-                $("#done").attr('disabled', false);
+                $("#ConfirmPassErrorR").text("");
+                $("#reset").attr('disabled', false);
             }
             else {
 
-                $("#PasswordError").text("Please Enter Same Password");
-                $("#done").attr('disabled', true);
+                $("#ConfirmPassErrorR").text("*Please Enter the Same Password");
+                $("#reset").attr('disabled', true);
             }
         }
         else {
-            $("#PasswordError").text("Please Confirm Password");
-            $("#done").attr('disabled', true);
+            $("#ConfirmPassErrorR").text("*Please Confirm the Password");
+            $("#reset").attr('disabled', true);
         }
 
     });

@@ -80,15 +80,21 @@ include "../config.php";
                             </div>
                             <p class="login-card-description">Validate Your Credential</p>
 
-                            <!-- Login Form -->
+                            <!-- Forgot Password Form -->
 
                             <div class="form-group">
                                 <label for="username" class="sr-only">Username</label>
-                                <input type="text" name="Username" id="Username" class="form-control" placeholder="Username">
+                                <input type="text" name="Username" id="UsernameF" class="form-control" placeholder="Username">
+                                <span style="color: red;" id="UsernameErrorF"><?php if (isset($_POST['submit'])) {
+                                                                                    echo $UsernameError;
+                                                                                } ?></span>
                             </div>
-                            <div class="form-group mb-4">
+                            <div class="form-group mb-4 mt-4">
                                 <label for="AccountNo" class="sr-only">Account Number</label>
-                                <input type="number" name="AccountNo" id="AccountNo" class="form-control" placeholder="Account Number">
+                                <input type="number" name="AccountNo" id="AccountNoF" class="form-control" placeholder="Account Number">
+                                <span style="color: red;" id="AccountNoErrorF"><?php if (isset($_POST['submit'])) {
+                                                                                    echo $AccountNoError;
+                                                                                } ?></span>
                             </div>
                             <input name="next" id="next" class="btn btn-block login-btn mb-4" type="submit" value="Next >>">
                             <p class="login-card-footer-text">Go Back To <a href="../index.php" class="text-reset">Home</a></p>
@@ -118,70 +124,118 @@ include "../config.php";
                 </div>
                 <div class="ms-4 me-4 mt-4">
                     <label for="NewPassword">New Password</label>
-                    <input type="text" id="NewPassword" class="form-control" placeholder="New Password">
+                    <input type="text" id="NewPasswordR" class="form-control" placeholder="New Password">
+                    <span style="color: red;" id="PasswordErrorR"><?php if (isset($_POST['NewPassword'])) {
+                                                                        echo $PasswordErrorR;
+                                                                    } ?></span>
                 </div>
                 <div class="m-4">
                     <label for="ConfirmPassword">Confirm Password</label>
-                    <input type="text" id="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+                    <input type="text" id="ConfirmPasswordR" class="form-control" placeholder="Confirm Password">
+                    <span style="color: red;" id="ConfirmPassErrorR"><?php if (isset($_POST['NewPassword'])) {
+                                                                            echo $ConfirmPassErrorR;
+                                                                        } ?></span>
                 </div>
                 <button id="reset" class="btn btn-success m-4">Reset</button>
             </div>
         </div>
     </div>
 
+    <script src="../assets/js/resetPass.js"></script>
     <script>
+        $("#UsernameF").blur(function() {
+            let user = $(this).val();
+            if (user == "") {
+                $("#UsernameErrorF").text("*Please Enter Your Username");
+            } else {
+                $("#UsernameErrorF").text("");
+            }
+        });
+
+        $("#AccountNoF").change(function() {
+            let account = $(this).val();
+            if (account == "") {
+                $("#AccountNoErrorF").text("*Account Number Can not Empty");
+            } else {
+                $("#AccountNoErrorF").text("");
+            }
+        });
+
         $("#next").click(function() {
-            let Username = $("#Username").val();
-            let AccountNo = $("#AccountNo").val();
-            $.ajax({
-                type: "POST",
-                url: "code.php",
-                data: {
-                    forgot: "forgotPass",
-                    Username: Username,
-                    AccountNo: AccountNo
-                },
-                success: function(response) {
-                    if (response == "success") {
-                        $("#resetPass").modal('show');
-                        $("#reset").click(function() {
-                            let NewPassword = $("#NewPassword").val();
-                            let ConfirmPassword = $("#ConfirmPassword").val();
-                            $.ajax({
-                                type: "POST",
-                                url: "code.php",
-                                data: {
-                                    NewPassword: NewPassword,
-                                    ConfirmPassword: ConfirmPassword,
-                                    AccountNo: AccountNo
-                                },
-                                success: function(response) {
-                                    if (response == "success") {
-                                        swal({
-                                            title: "Hurray!",
-                                            text: "Your Password has been changed successfully.",
-                                            icon: "success",
-                                        });
-                                    } else {
-                                        swal({
-                                            title: "Ooops!",
-                                            text: response,
-                                            icon: "error",
-                                        });
-                                    }
-                                    $("#resetPass").modal('hide');
+            let Username = $("#UsernameF").val();
+            let AccountNo = $("#AccountNoF").val();
+            let user_err = document.getElementById("UsernameErrorF");
+            let account_err = document.getElementById("AccountNoErrorF");
+
+            if (Username == "") {
+                user_err.innerHTML = "*Please Enter Your Username";
+            } else if (AccountNo == "") {
+                account_err.innerHTML = "";
+                account_err.innerHTML = "*Account Number Can not Empty";
+            } else {
+                account_err.innerHTML = "";
+                $.ajax({
+                    type: "POST",
+                    url: "code.php",
+                    data: {
+                        forgot: "forgotPass",
+                        Username: Username,
+                        AccountNo: AccountNo
+                    },
+                    success: function(response) {
+                        if (response == "success") {
+                            $("#resetPass").modal('show');
+
+                            $("#reset").click(function() {
+                                let NewPassword = $("#NewPasswordR").val();
+                                let ConfirmPassword = $("#ConfirmPasswordR").val();
+                                let pass_err = document.getElementById("PasswordErrorR");
+                                let cpass_err = document.getElementById("ConfirmPassErrorR");
+
+                                if (NewPassword == "") {
+                                    pass_err.innerHTML = "*Please Enter New Password.";
+                                } else if (ConfirmPassword == "") {
+                                    pass_err.innerHTML = "";
+                                    cpass_err.innerHTML = "*Please Confirm the New Password.";
+                                } else {
+                                    cpass_err.innerHTML = "";
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "code.php",
+                                        data: {
+                                            NewPassword: NewPassword,
+                                            ConfirmPassword: ConfirmPassword,
+                                            AccountNo: AccountNo
+                                        },
+                                        success: function(response) {
+                                            if (response == "success") {
+                                                swal({
+                                                    title: "Hurray!",
+                                                    text: "Your Password has been changed successfully.",
+                                                    icon: "success",
+                                                });
+                                            } else {
+                                                swal({
+                                                    title: "Ooops!",
+                                                    text: response,
+                                                    icon: "error",
+                                                });
+                                            }
+                                            $("#resetPass").modal('hide');
+                                        }
+                                    });
                                 }
                             });
-                        });
-                    } else {
-                        swal({
-                            title: "Ooops!",
-                            text: response,
-                            icon: "error",
-                        });
+                        } else {
+                            swal({
+                                title: "Ooops!",
+                                text: response,
+                                icon: "error",
+                            });
+                        }
                     }
-                }
-            });
+                });
+            }
         });
     </script>
 
