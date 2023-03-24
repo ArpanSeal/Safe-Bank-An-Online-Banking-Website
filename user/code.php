@@ -55,7 +55,7 @@ if (isset($_POST['check'])) {
         echo "success";
     }
     else if (mysqli_num_rows($result1) > 0 && mysqli_num_rows($result2) > 0 && mysqli_num_rows($result3) > 0) {
-        echo "You have already been registered! If you can't login to your account, please wait for the account verification.";
+        echo mysqli_num_rows($result1).mysqli_num_rows($result2).mysqli_num_rows($result3);
     }
     else if (mysqli_num_rows($result1) > 0 && mysqli_num_rows($result2) > 0) {
         echo "Email address: ". $email. " and Username: ". $Username." have already been taken! Please choose another.";
@@ -200,7 +200,7 @@ if (isset($_POST['submit'])) {
     $Password  = $_POST['Password'];
     $ConfirmPass = $_POST['ConfirmPass'];
 
-    $UsernameError =  $PasswordError  = $ConfirmPassError = false;
+    $UsernameError =  $PasswordErrorR  = $ConfirmPassErrorR = false;
 
     if (!empty($Username)) {
         if (!preg_match_all('/^[A-Za-z]{1}[A-Za-z0-9]{5,31}$/', $Username)) {
@@ -219,28 +219,28 @@ if (isset($_POST['submit'])) {
             }
         }
     } else {
-        $UsernameError = "* Username Cannot Empty";
+        $UsernameError = "* Username cannot be Empty";
     }
 
     // ----------------------------------------- Password Verification ---------------------------------------------
     if (!empty($Password)) {
         if (!preg_match_all('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.* )(?=.*[^a-zA-Z0-9]).{8,16}$/m', $Password)) {
-            $PasswordError  = "* Password must contain Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character";
+            $PasswordErrorR  = "* Password must contain Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character";
         } else {
             $hashPass = md5($Password);
-            $PasswordError = false;
+            $PasswordErrorR = false;
         }
     } else {
-        $PasswordError = "Password Cannot be empty";
+        $PasswordErrorR = "Password cannot be empty";
     }
 
     if (!empty($ConfirmPass)) {
 
         if ($ConfirmPass != $Password) {
-            $ConfirmPassError = "Please Enter same Password";
+            $ConfirmPassErrorR = "Please Enter same Password";
         }
     } else {
-        $ConfirmPassError = "Please Confirm Password";
+        $ConfirmPassErrorR = "Please Confirm Password";
     }
 
 
@@ -263,7 +263,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    if ($First_Name_error == null && $Last_Name_error == null && $Father_Name_error == null && $Mother_Name_error == null && $Birth_Date_error == null && $Mobile_Number_error == null && $Email_error == null && $UsernameError == false && $PasswordError == false && $ConfirmPassError == false) {
+    if ($First_Name_error == null && $Last_Name_error == null && $Father_Name_error == null && $Mother_Name_error == null && $Birth_Date_error == null && $Mobile_Number_error == null && $Email_error == null && $UsernameError == false && $PasswordErrorR == false && $ConfirmPassErrorR == false) {
         try {
             // mysql query for customer table
             $Upload_query = "INSERT INTO customer_detail(Account_No, C_First_Name, C_Last_Name, C_Father_Name, C_Mother_Name, C_Birth_Date, C_Mobile_No, C_Email, C_Gender, ProfileColor, ProfileImage, Bio) VALUES('$Account_Number', '$First_Name', '$Last_Name', '$Father_Name', '$Mother_Name', '$Birth_Date', '$Mobile_Number', '$Email', 'Not Available', '$hex', '', '')";

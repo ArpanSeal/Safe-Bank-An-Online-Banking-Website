@@ -164,7 +164,7 @@ $(document).ready(function () {
             }
         }
         else {
-            $("#AcError").text("Account Number Cannot Empty");
+            $("#AcError").text("Account Number Cannot Be Empty");
 
         }
 

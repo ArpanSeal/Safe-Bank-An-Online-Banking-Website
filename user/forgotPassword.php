@@ -171,7 +171,7 @@ include "../config.php";
                 user_err.innerHTML = "*Please Enter Your Username";
             } else if (AccountNo == "") {
                 account_err.innerHTML = "";
-                account_err.innerHTML = "*Account Number Can not Empty";
+                account_err.innerHTML = "*Account Number Can not Be Empty";
             } else {
                 account_err.innerHTML = "";
                 $.ajax({

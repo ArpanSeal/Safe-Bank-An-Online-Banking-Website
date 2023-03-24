@@ -221,7 +221,7 @@ $(document).ready(function () {
         UsernameError = 0;
       }
     } else {
-      $("#UsernameError").text("Username Can not Empty");
+      $("#UsernameError").text("Username Can not Be Empty");
       $("#submitBtn").attr("disabled", true);
     }
   });
@@ -243,7 +243,7 @@ $(document).ready(function () {
         $("#submitBtn").attr("disabled", false);
       }
     } else {
-      $("#PasswordError").text("Password Can not Empty");
+      $("#PasswordError").text("Password Can not Be Empty");
       $("#submitBtn").attr("disabled", true);
     }
   });
