@@ -212,7 +212,7 @@ $(document).ready(function () {
       let regex = /^[A-Za-z]{1}[A-Za-z0-9]{5,31}$/;
       if (!regex.test(Username)) {
         $("#UsernameError").text(
-          "Please Enter Valid Username conatining letters and number"
+          "Please Enter Valid Username containing letters and numbers of minimum 6 characters"
         );
         $("#submitBtn").attr("disabled", true);
       } else {
