@@ -126,6 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-scrolled, #header.header-inner-pages {
   background: rgb(0 27 114 / 80%);
+  backdrop-filter: blur(5px);
   padding: 12px 0;
 }
 
