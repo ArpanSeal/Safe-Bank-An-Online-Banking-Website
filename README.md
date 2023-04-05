@@ -1,6 +1,6 @@
 # Safe-Bank-An-Online-Banking-Website
 
-This project is aimed at developing an Online Banking for customer. The system is an online application that can be accessed throughout the organization and outside as well with proper login provided. The Safe Bank offers you the option of transferring your money to another account. You can also check your transaction history, which includes sender and receiver names, transaction amounts, and the exact date and time. Also there are more features like Saving Option, Profile Creation, Option to update your username or password etc.
+The aim of this project is to create an online banking service for customers. The software is an Internet-based program that can be used both inside and outside the organization with proper login credentials. Safe Bank allows users to transfer money to another account and view their transaction history, showing the names of the sender and recipient, the amounts involved, and the exact date and time of each transaction. In addition, the platform also includes other features such as saving options, profile creation and the ability to change usernames or passwords.
 
 # Tech Stack used
 Front-end : HTML, CSS, Bootstrap, Javascript & AJAX
