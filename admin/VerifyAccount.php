@@ -455,7 +455,9 @@ include "../config.php";
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content lightGray_bg">
                 <div class="modal-header light">
-                    <h5 class="modal-title" id="exampleModalLongTitle" style="margin-left: 40%;">Customer Detail</h5>
+                    <div class="container d-flex justify-content-center">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Customer Detail</h5>
+                    </div>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
