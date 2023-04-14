@@ -23,7 +23,12 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Poppins", sans-serif;
 }
 
@@ -72,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 9999;
   overflow: hidden;
   background: #fff;
+  transition: opacity 0.75s, visibility 0.75s;
 }
 
 #preloader:before {
@@ -106,6 +112,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -124,7 +135,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px 0;
 }
 
-#header.header-scrolled, #header.header-inner-pages {
+#header.header-scrolled,
+#header.header-inner-pages {
   background: rgb(0 27 114 / 80%);
   backdrop-filter: blur(5px);
   padding: 12px 0;
@@ -209,12 +221,16 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.navbar a:hover:before, .navbar li:hover > a:before, .navbar .active:before {
+.navbar a:hover:before,
+.navbar li:hover > a:before,
+.navbar .active:before {
   visibility: visible;
   width: 100%;
 }
 
-.navbar a:hover, .navbar .active, .navbar li:hover > a {
+.navbar a:hover,
+.navbar .active,
+.navbar li:hover > a {
   color: #fff;
 }
 
@@ -233,7 +249,8 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #fff;
 }
 
-.navbar .getstarted:before, .navbar li:hover > .getstarted:before {
+.navbar .getstarted:before,
+.navbar li:hover > .getstarted:before {
   visibility: hidden;
 }
 
@@ -266,7 +283,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
 }
 
-.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
   color: #4685f9;
 }
 
@@ -302,7 +321,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 991px) {
-  .mobli{
+  .mobli {
     margin-top: 21px;
   }
 }
@@ -379,11 +398,15 @@ h1, h2, h3, h4, h5, h6 {
   color: #2c4964;
 }
 
-.navbar-mobile a:hover:before, .navbar-mobile li:hover > a:before, .navbar-mobile .active:before {
+.navbar-mobile a:hover:before,
+.navbar-mobile li:hover > a:before,
+.navbar-mobile .active:before {
   visibility: hidden;
 }
 
-.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover > a {
   color: #4685f9;
 }
 
@@ -415,7 +438,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
 }
 
-.navbar-mobile .dropdown ul a:hover, .navbar-mobile .dropdown ul .active:hover, .navbar-mobile .dropdown ul li:hover > a {
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover > a {
   color: #4685f9;
 }
 
@@ -423,19 +448,24 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(45deg, rgb(75 171 255 / 90%) 0%, rgb(0 20 141 / 90%) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: linear-gradient(
+      45deg,
+      rgb(75 171 255 / 90%) 0%,
+      rgb(0 20 141 / 90%) 100%
+    ),
+    url("../img/hero-bg.jpg") center center no-repeat;
 
   background-size: cover;
 }
 
-#hero .container, #hero .container-fluid {
+#hero .container,
+#hero .container-fluid {
   padding-top: 84px;
 }
 
@@ -467,17 +497,16 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid #fff;
 }
 
-.heroBtn{
+.heroBtn {
   display: flex;
-  
 }
 
-#btwdis{
+#btwdis {
   margin: 20px;
 }
 
 @media (max-width: 991px) {
-  .heroBtn{
+  .heroBtn {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -485,25 +514,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 395px) {
-  #btwdis{
+  #btwdis {
     margin: 10px;
   }
 }
 
 @media (max-width: 375px) {
-  #btwdis{
+  #btwdis {
     margin: 5px;
   }
 }
 
 @media (max-width: 365px) {
-  #btwdis{
+  #btwdis {
     margin: 2.5px;
   }
 }
 
 @media (max-width: 355px) {
-  #btwdis{
+  #btwdis {
     display: none;
   }
 }
@@ -527,7 +556,8 @@ h1, h2, h3, h4, h5, h6 {
   #hero {
     text-align: center;
   }
-  #hero .container, #hero .container-fluid {
+  #hero .container,
+  #hero .container-fluid {
     padding-top: 68px;
   }
   #hero .animated {
@@ -613,7 +643,7 @@ section {
 }
 
 .section-title h2::after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 50px;
@@ -689,7 +719,12 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-  background: linear-gradient(90deg, rgb(0 175 255 / 50%) 0%, rgb(0 83 255 / 50%) 100%), url("../img/counts-bg.png") center center no-repeat;
+  background: linear-gradient(
+      90deg,
+      rgb(0 175 255 / 50%) 0%,
+      rgb(0 83 255 / 50%) 100%
+    ),
+    url("../img/counts-bg.png") center center no-repeat;
   padding: 80px 0 60px 0;
 }
 
@@ -839,10 +874,9 @@ section {
 .services .iconbox-teal:hover .icon path {
   fill: #11dbcf;
 }
-.loanIco{
+.loanIco {
   height: 50px;
   width: 50px;
-  
 }
 /*--------------------------------------------------------------
 # Features
@@ -903,7 +937,8 @@ section {
   margin: 0 0 0 45px;
 }
 
-.testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
+.testimonials .testimonial-item .quote-icon-left,
+.testimonials .testimonial-item .quote-icon-right {
   color: #a9d7fc;
   font-size: 26px;
 }
@@ -987,7 +1022,8 @@ section {
   font-family: "Poppins", sans-serif;
 }
 
-.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
   color: #fff;
   background: #4685f9;
 }
@@ -1096,7 +1132,10 @@ section {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -1104,7 +1143,10 @@ section {
   border: 1px solid #4685f9;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #4685f9;
 }
 
@@ -1262,7 +1304,8 @@ section {
   background: linear-gradient(42deg, #5e97ff 0%, #0022c7 100%);
 }
 
-.faq .section-title h2, .faq .section-title p {
+.faq .section-title h2,
+.faq .section-title p {
   color: #fff;
 }
 
@@ -1310,7 +1353,8 @@ section {
   color: #778bfb;
 }
 
-.faq .faq-list .icon-show, .faq .faq-list .icon-close {
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
   font-size: 24px;
   position: absolute;
   right: 0;
@@ -1428,13 +1472,15 @@ section {
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form input, .contact .php-email-form textarea {
+.contact .php-email-form input,
+.contact .php-email-form textarea {
   border-radius: 5px;
   box-shadow: none;
   font-size: 14px;
 }
 
-.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
   border-color: #4685f9;
 }
 
@@ -1536,7 +1582,12 @@ section {
 #footer {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(45deg, rgb(60 115 255 / 71%) 0%, rgb(0 11 168 / 60%) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: linear-gradient(
+      45deg,
+      rgb(60 115 255 / 71%) 0%,
+      rgb(0 11 168 / 60%) 100%
+    ),
+    url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
 
@@ -1693,7 +1744,7 @@ section {
   text-decoration: none;
 }
 
-.btn-custo{
+.btn-custo {
   border: none;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -1707,6 +1758,6 @@ section {
   background: linear-gradient(45deg, #4685f9 0%, #2c48ff 100%);
   position: relative;
 }
-.btn-custo:hover{
+.btn-custo:hover {
   background: linear-gradient(180deg, #4685f9 0%, #2c48ff 100%);
 }

@@ -4,6 +4,7 @@
  * Author: BootstrapMade.com
  * License: https://bootstrapmade.com/license/
  */
+
 (function () {
   "use strict";
 
@@ -174,12 +175,15 @@
   /**
    * Preloader
    */
-  let preloader = select("#preloader");
-  if (preloader) {
-    window.addEventListener("load", () => {
-      preloader.remove();
+  window.addEventListener("load", () => {
+    const preloader = document.getElementById("preloader");
+    preloader.classList.add("preloader-hidden");
+    preloader.addEventListener("transitionend", () => {
+      while (preloader.hasChildNodes()) {
+        preloader.removeChild(preloader.firstChild);
+      }
     });
-  }
+  });
 
   /**
    * Testimonials slider
