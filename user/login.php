@@ -169,6 +169,13 @@ if (isset($_SESSION['username'])) {
                                 </div>
                                 <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Login">
                             </form>
+                            <div style="color: green">
+                                <div>For testing purpose, use this:</div>
+                                <hr>
+                                <div>Username: test1234</div>
+                                <div>Password: Test@1234</div>
+                                <hr>
+                            </div>
                             <a href="../user/forgotPassword.php" class="forgot-password-link">Forgot password?</a>
                             <p class="login-card-footer-text">Don't have an account? <a href="../user/CreateAccount.php" class="text-reset">Register here</a></p>
                             <nav class="login-card-footer-nav">
