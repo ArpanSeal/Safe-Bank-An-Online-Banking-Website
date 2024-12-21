@@ -27,6 +27,6 @@ Database : MySQL
 • Change username or password option
 
 # Demo
-View live demo of this project 👇
+View live demo of this project 👇 (Sorry, currently non-operational)
 
 https://safebnk.000webhostapp.com/
